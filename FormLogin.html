@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Đăng Nhập</title>
+    <link rel="stylesheet" href="fileCSS/otherCSS/sigup.css" />
+    <script
+      src="https://kit.fontawesome.com/47907ab6ea.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="fileCSS/style.css" />
+    <script src="fileJS/hotro.js"></script>
+    <script src="fileJS/sanPham.js"></script>
+    <script src="fileJS/gioHang.js"></script>
+    <script src="fileJS/formSigUp.js"></script>
+  </head>
+  <body>
+    <section class="nav__header">
+      <ul>
+        <li><a href="Home.html">Trang chủ</a></li>
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#hangDT">Hãng điện thoại</a></li>
+        <li><a href="#">Hệ thống siêu thị</a></li>
+        <li><a href="gioHang.html">Tra cứu đơn hàng</a></li>
+        <li class="hide"><a href="Them-SanPham.html">Thêm Sản Phẩm</a></li>
+        <li><a href="#">Đăng nhập</a></li>
+      </ul>
+    </section>
+    <div class="form_Login">
+      <h1>Đăng Nhập</h1>
+      <div class="accout">
+        <label for="" class="text">Tài Khoản</label>
+        <input type="text" id="account" placeholder="Tên tài khoản" />
+      </div>
+      <div class="password">
+        <label for="" class="text">Mật khẩu</label>
+        <input type="password" id="password" placeholder="Mật khẩu tài khoản" />
+      </div>
+      <div class="ifSigup">
+        <a href="formSingup.html">Đăng ký tài khoản tại đây</a>
+      </div>
+      <div class="btn">
+        <button onclick="dangNhap()">
+          <a href="#" id="links">Đăng Nhập</a>
+        </button>
+      </div>
+    </div>
+    <script>
+      function dangNhap() {
+        var nodeAccount = document.getElementById("account");
+        var account = nodeAccount.value;
+        console.log(account);
+
+        var nodePassword = document.getElementById("password");
+        var password = nodePassword.value;
+        console.log(password);
+
+        var danhSachTaiKhoan = layDanhSachTaiKhoanDuoiLocalStorage();
+        console.log(danhSachTaiKhoan);
+
+        if (danhSachTaiKhoan == null) {
+          alert("xin lỗi bạn chưa có tài khoản xin mời đăng ký");
+        } else {
+          for (var i = 0; i < danhSachTaiKhoan.length; i++) {
+            var taiKhoan = danhSachTaiKhoan[i];
+
+            if (taiKhoan.accouts == account && taiKhoan.password == password) {
+              alert("đăng nhập thành công");
+              var x = document.getElementById("links");
+              x.href = "admin.html";
+            } else {
+              alert("Xin lỗi tài khoản hoặc mật khẩu không chính xác");
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

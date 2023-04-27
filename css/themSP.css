@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.them-moi-san-pham {
+  width: 50%;
+  border: 1px solid #333;
+  margin: auto;
+  padding: 30px;
+  /* height: 500px; */
+}
+.them-moi-san-pham input,
+label {
+  width: 100%;
+  display: block;
+}
+.them-moi-san-pham label {
+  margin-top: 20px;
+}
+.them-moi-san-pham input {
+  margin-top: 5px;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.them-moi-san-pham button {
+  width: 100%;
+  margin-top: 20px !important;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  /* background-color: burlywood; */
+  color: #333;
+  margin: auto;
+}
+
+.them-moi-san-pham button:hover {
+  background: yellow;
+}

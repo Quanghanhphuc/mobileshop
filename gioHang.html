@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giỏ Hàng</title>
+
+    <script
+      src="https://kit.fontawesome.com/47907ab6ea.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="fileCSS/style.css" />
+    <script src="fileJS/hotro.js"></script>
+    <script src="fileJS/sanPham.js"></script>
+    <script src="fileJS/gioHang.js"></script>
+  </head>
+  <body>
+    <section class="nav__header">
+      <ul>
+        <li><a href="Home.html">Trang chủ</a></li>
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#hangDT">Hãng điện thoại</a></li>
+        <li><a href="#">Hệ thống siêu thị</a></li>
+        <li><a href="gioHang.html">Tra cứu đơn hàng</a></li>
+        <li><a href="fileHTML/otherHTML/sigup.html">Đăng nhập</a></li>
+      </ul>
+    </section>
+    <section class="mobile">
+      <div class="nav">
+        <div class="nav__banner">
+          <div class="header__logo">
+            <h3>
+              <a href="Home.html"><span>M</span>obile.com</a>
+            </h3>
+          </div>
+          <div class="header__nav--search">
+            <input
+              type="text"
+              class="search__input"
+              placeholder="Bạn cần tìm gì nào?"
+            />
+            <div class="search__icon">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+          <div class="header__nav--oder">
+            <a class="check--oder" href="#">
+              <span class="icon">
+                <i class="fa fa-car"></i>
+              </span>
+              <span class="text">Kiểm tra đơn hàng</span>
+            </a>
+          </div>
+          <div class="header__nav--cart">
+            <div class="cart--logo">
+              <a href="#"><i class="fa fa-cart-shopping"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cart_main">
+        <div class="main">
+          <div class="main_oder" id="main">
+            <div class="items">
+              <div class="itemImages">
+                <img src="image/imgCar/realme-c35-1-1.jpg" alt="" />
+              </div>
+              <div class="itemName">
+                <span class="name">Iphone 12 pro</span>
+              </div>
+              <div class="itemSoLuong">
+                <input type="text" class="soLuong" value="1" />
+              </div>
+              <div class="itemTongTien">
+                <span class="item_price">2300000Đ</span>
+              </div>
+              <div class="delete">
+                <i class="fa-solid fa-trash" onclick="xoaItemGioHang()"></i>
+              </div>
+            </div>
+          </div>
+          <!-- <h1 class="sum_money">Tổng Tiền</h1>
+          <p class="total_price">Đ</p> -->
+          <div class="information">
+            <h1>Thông Tin Khách Hàng</h1>
+            <div class="information_gender">
+              <input type="radio" />
+              <label for="Anh">Anh</label>
+              <input type="radio" class="raio" />
+              <label for="Chi">Chị</label>
+            </div>
+            <div class="information_name">
+              <input type="text" class="name" placeholder="Họ và Tên" />
+              <input type="text" class="phone" placeholder="Số điện thoại" />
+            </div>
+            <div class="information_address">
+              <div class="tinh_huyen">
+                <input type="text" placeholder="Tỉnh Thành" />
+                <input type="text" placeholder="Huyện" />
+              </div>
+              <div class="phuong_soNha">
+                <input type="text" placeholder="Xã / Thị trấn" />
+                <input type="text" placeholder="Số nhà" />
+              </div>
+              <div class="yeu_cau">
+                <input type="text" placeholder="Yêu cầu của khách hàng" />
+              </div>
+            </div>
+            <h1 class="sum_money">Tổng Tiền</h1>
+            <p class="total_price">Đ</p>
+            <div class="btn_datHang">
+              <button>Đặt Hàng</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="footer">
+      <div class="footer_container">
+        <div class="footer_colum">
+          <div class="footer_col1">
+            <h1>Tổng đài hỗ trợ miễn phí</h1>
+            <div class="footer__col1-text">
+              <p>hot line mua hàng 1800.1212(7h20 - 21h00)</p>
+              <p>hot line khiếu nại 1800.1212(7h20 - 21h00)</p>
+              <p>hot line bảo hành 1800.1212(7h20 - 21h00)</p>
+            </div>
+          </div>
+          <div class="footer_col1">
+            <h1>Thông tin và chính sách</h1>
+            <div class="footer__col1-text">
+              <a href="#"><p>mua hàng và thanh toán online</p></a>
+              <a href="#"><p>Mua hàng trả góp Online</p></a>
+              <a href="#"><p>Tra thông tin đơn hàng</p></a>
+              <a href="#"><p>Tra thông tin bảo hành</p></a>
+              <a href="#"><p>Thông tin hoá đơn mua hàng</p></a>
+              <a href="#"><p>Trung tâm bảo hành chính hãng</p></a>
+            </div>
+          </div>
+          <div class="footer_col1">
+            <h1>Dịch vụ và thông tin khác</h1>
+            <div class="footer__col1-text">
+              <a href="#"><p>Ưu đãi thanh toán</p></a>
+              <a href="#"><p>Quy chế hoạt động</p></a>
+              <a href="#"><p>Chính sách Bảo hành</p></a>
+              <a href="#"><p>Tuyển dụng</p></a>
+              <a href="#"><p>Dịch vụ bảo hành mở rộng</p></a>
+            </div>
+          </div>
+          <div class="footer_col1">
+            <h1>Kết nối với Mobile</h1>
+            <div class="footer_col1-icon">
+              <a href="#"
+                ><img src="image/imgLogo/cellphones-youtube.png" alt=""
+              /></a>
+              <a href="#"
+                ><img src="image/imgLogo/mobile-facebook.png" alt=""
+              /></a>
+              <a href="#"><img src="image/imgLogo/instagram.png" alt="" /></a>
+              <a href="#"><img src="image/imgLogo/tiktok.png" alt="" /></a>
+              <a href="#"><img src="image/imgLogo/zalo.png" alt="" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      hienThiDanhSachItemGioHang();
+
+      function hienThiDanhSachItemGioHang() {
+        var danhSachItemGioHang = layGioHangTuLocalStorage();
+
+        var HTML = chuyenDanhSachItemGioHangSangHTML(danhSachItemGioHang);
+
+        var nodeGioHang = document.getElementById("main");
+        nodeGioHang.innerHTML = HTML;
+      }
+
+      function chuyenDanhSachItemGioHangSangHTML(danhSachItemGioHang) {
+        var htmlTong = "";
+        for (var i = 0; i < danhSachItemGioHang.length; i++) {
+          htmlTong =
+            htmlTong +
+            chuyenDoiTuongItemGioHangSangHTML(danhSachItemGioHang[i]);
+        }
+        return htmlTong;
+      }
+
+      function chuyenDoiTuongItemGioHangSangHTML(itemGioHang) {
+        var sanPham = laySanPhamTheoID(itemGioHang.idSanPham);
+
+        var giaHienTai = itemGioHang.soLuong * sanPham.giaGoc;
+
+        var html =
+          ' <div class="items">\n' +
+          '              <div class="itemImages">\n' +
+          '                <img src="' +
+          sanPham.hinhAnh +
+          '" alt="" />\n' +
+          "              </div>\n" +
+          '              <div class="itemName">\n' +
+          '                <span class="name">' +
+          sanPham.ten +
+          "</span>\n" +
+          "              </div>\n" +
+          '              <div class="itemSoLuong">\n' +
+          '                <input type="number" class="soLuong" value="' +
+          itemGioHang.soLuong +
+          '" />\n' +
+          "              </div>\n" +
+          '              <div class="itemTongTien">\n' +
+          '                <div class="item_price">' +
+          giaHienTai.toLocaleString() +
+          "Đ</div>\n" +
+          "              </div>\n" +
+          '              <div class="delete">\n' +
+          '                <i class="fa-solid fa-trash" onclick="xoaItemGioHang(' +
+          itemGioHang.idSanPham +
+          ')"></i>\n' +
+          "              </div>\n" +
+          "            </div>";
+
+        return html;
+      }
+
+      function xoaItemGioHang(layID) {
+        var sanPham = LayDanhSachItemGioHangDuoiLocalStorage();
+
+        //
+        for (var i = 0; i < sanPham.length; i++) {
+          if (sanPham[i].idSanPham == layID) {
+            sanPham.splice(i, 1);
+          }
+        }
+        luuGioHangVaoLocalStorage(sanPham);
+        hienThiDanhSachItemGioHang();
+      }
+    </script>
+  </body>
+</html>

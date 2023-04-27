@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+:root {
+  font-size: 62.2%;
+  --bck-products: rgb(186, 195, 204);
+  --bck-item: rgb(255, 255, 255);
+  --bck-btn: #6c30a333;
+  --hover-btn: #cd96cd;
+  --bck-color-price: rgb(211, 2, 28);
+  --bck-buy: rgb(236, 38, 41);
+}
+/* ========================================slide======================== */
+
+/* ========================Secsion=========================== */

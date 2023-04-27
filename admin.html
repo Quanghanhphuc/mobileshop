@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <script
+      src="https://kit.fontawesome.com/47907ab6ea.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="fileCSS/style.css" />
+    <script src="fileJS/hotro.js"></script>
+    <script src="fileJS/sanPham.js"></script>
+    <script src="fileJS/gioHang.js"></script>
+  </head>
+  <body>
+    <section class="nav__header">
+      <ul>
+        <li><a href="Home.html">Trang chủ</a></li>
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#hangDT">Hãng điện thoại</a></li>
+        <li><a href="#">Hệ thống siêu thị</a></li>
+        <li><a href="gioHang.html">Tra cứu đơn hàng</a></li>
+        <li><a href="Them-SanPham.html">Thêm Sản Phẩm</a></li>
+        <li><a href="Home.html">Thoát</a></li>
+      </ul>
+    </section>
+    <section class="mobile">
+      <div class="nav">
+        <div class="nav__banner">
+          <div class="header__logo">
+            <h3>
+              <a href="Home.html"><span>M</span>obile.com</a>
+            </h3>
+          </div>
+          <div class="header__nav--search">
+            <input
+              type="text"
+              class="search__input"
+              placeholder="Bạn cần tìm gì nào?"
+            />
+            <div class="search__icon" onclick="searchDanhSachSanPham()">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+          <div class="header__nav--oder">
+            <a class="check--oder" href="#">
+              <span class="icon">
+                <i class="fa fa-car"></i>
+              </span>
+              <span class="text">Kiểm tra đơn hàng</span>
+            </a>
+          </div>
+          <div class="header__nav--cart">
+            <div class="cart--logo">
+              <a href="gioHang.html"><i class="fa fa-cart-shopping"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header">
+        <div class="header__name--img">
+          <div class="slider">
+            <div class="slides">
+              <!-- radio button star -->
+              <input type="radio" name="radio-btn" id="radio1" />
+              <input type="radio" name="radio-btn" id="radio2" />
+              <input type="radio" name="radio-btn" id="radio3" />
+              <input type="radio" name="radio-btn" id="radio4" />
+              <!-- radio buton end -->
+
+              <!-- sliderimage star -->
+              <div class="slide first">
+                <img src="image/imgSlider/sliderIndex1.jpg" alt="" srcset="" />
+              </div>
+              <div class="slide">
+                <img src="image/imgSlider/sliderIndex2.jpg" alt="" srcset="" />
+              </div>
+              <div class="slide">
+                <img src="image/imgSlider/silderIndex3.jpg" alt="" srcset="" />
+              </div>
+              <div class="slide">
+                <img src="image/imgSlider/sliderIndex4.png" alt="" srcset="" />
+              </div>
+              <!-- sliderimage end -->
+
+              <!-- navigation star -->
+              <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+              </div>
+              <!-- navigation end -->
+            </div>
+            <!-- manual star -->
+            <div class="navigation-manual">
+              <label for="radio1" class="manual-btn"></label>
+              <label for="radio2" class="manual-btn"></label>
+              <label for="radio3" class="manual-btn"></label>
+              <label for="radio4" class="manual-btn"></label>
+            </div>
+            <!-- manual emd -->
+          </div>
+          <!-- slider end -->
+        </div>
+      </div>
+      <div id="products">
+        <div class="items">
+          <div class="item">
+            <div class="item_image">
+              <img
+                src="https://lesang.vn/hinh-anh-le-sang/images/iphone-5-hinh-anh-chinh-thuc-3.jpg"
+                alt=""
+              />
+            </div>
+            <h2 class="item_title">I Phone 11</h2>
+
+            <div class="item_price">
+              <span class="item_origin">5000000</span>
+            </div>
+            <div class="item_sale-text"></div>
+            <div class="buyMoreCart">
+              <button class="btn primary">Thêm vào giỏ hàng</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main__list">
+        <div class="technology">
+          <div class="technology_left">
+            <div class="technology_left-text">
+              <div class="technology_left-info">
+                <span>Thông tin công nghệ</span>
+              </div>
+              <a href="#"
+                ><p class="technology_left-all"></p>
+                xem tất cả</a
+              >
+            </div>
+            <div class="technology_left-list">
+              <ul>
+                <li>
+                  <a href="#">
+                    <img src="image/imgfor/rogphone7.jpg" alt="" />
+                    <div class="technology_text">
+                      ASUS ra mắt ROG Phone 7 và 7 Ultimate: Snapdragon 8 Gen 2,
+                      hệ thống tản nhiệt được nâng cấp, giá từ 25.9 triệu đồng
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="image/imgfor/numia z50.jpg" alt="" />
+                    <div class="technology_text">
+                      Đây là nubia Z50 Ultra: Smartphone có thiết kế đẹp tới mức
+                      Samsung và Apple cũng phải "chào thua"
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="image/imgfor/smart phone noi bat.jpg" alt="" />
+                    <div class="technology_text">
+                      4 smartphone Android tầm trung nổi bật nhất tháng 4
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="technology_right">
+            <div class="technology_right-other">
+              <span>Tin khác</span>
+            </div>
+            <div class="technology_right-list">
+              <img
+                src="image/imgfor/review-laptop-cho-sinh-vien-6.jpg"
+                alt=""
+              />
+              <div class="text">
+                <p>
+                  Review laptop cho sinh viên – Top 4 laptop sinh viên nên mua
+                  ngay
+                </p>
+              </div>
+            </div>
+            <div class="technology_right-list">
+              <img src="image/imgfor/redmi watch3.png" alt="" />
+              <div class="text">
+                <p>Redmi Watch 3 nhiều tiện ích thể thao, giá dưới 3 triệu</p>
+              </div>
+            </div>
+            <div class="technology_right-list">
+              <a href="#"></a>
+              <img src="image/imgfor/nhathongminh.jpg" alt="" />
+              <div class="text">
+                <p>Nền tảng nhà thông minh SmartThings ra mắt tại Việt Nam</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="footer">
+      <div class="footer_container">
+        <div class="footer_colum">
+          <div class="footer_col1">
+            <h1>Tổng đài hỗ trợ miễn phí</h1>
+            <div class="footer__col1-text">
+              <p>hot line mua hàng 1800.1212(7h20 - 21h00)</p>
+              <p>hot line khiếu nại 1800.1212(7h20 - 21h00)</p>
+              <p>hot line bảo hành 1800.1212(7h20 - 21h00)</p>
+            </div>
+          </div>
+          <div class="footer_col1">
+            <h1>Thông tin và chính sách</h1>
+            <div class="footer__col1-text">
+              <a href="#"><p>mua hàng và thanh toán online</p></a>
+              <a href="#"><p>Mua hàng trả góp Online</p></a>
+              <a href="#"><p>Tra thông tin đơn hàng</p></a>
+              <a href="#"><p>Tra thông tin bảo hành</p></a>
+              <a href="#"><p>Thông tin hoá đơn mua hàng</p></a>
+              <a href="#"><p>Trung tâm bảo hành chính hãng</p></a>
+            </div>
+          </div>
+          <div class="footer_col1">
+            <h1>Dịch vụ và thông tin khác</h1>
+            <div class="footer__col1-text">
+              <a href="#"><p>Ưu đãi thanh toán</p></a>
+              <a href="#"><p>Quy chế hoạt động</p></a>
+              <a href="#"><p>Chính sách Bảo hành</p></a>
+              <a href="#"><p>Tuyển dụng</p></a>
+              <a href="#"><p>Dịch vụ bảo hành mở rộng</p></a>
+            </div>
+          </div>
+          <div class="footer_col1">
+            <h1>Kết nối với Mobile</h1>
+            <div class="footer_col1-icon">
+              <a href="#"
+                ><img src="image/imgLogo/cellphones-youtube.png" alt=""
+              /></a>
+              <a href="#"
+                ><img src="image/imgLogo/mobile-facebook.png" alt=""
+              /></a>
+              <a href="#"><img src="image/imgLogo/instagram.png" alt="" /></a>
+              <a href="#"><img src="image/imgLogo/tiktok.png" alt="" /></a>
+              <a href="#"><img src="image/imgLogo/zalo.png" alt="" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      var counter = 1;
+      setInterval(function () {
+        document.getElementById("radio" + counter).checked = true;
+        counter++;
+        if (counter > 4) {
+          counter = 1;
+        }
+      }, 5000);
+    </script>
+    <script>
+      // slider
+
+      var jsonDanhSachSP = localStorage.getItem("creatProduct");
+      var creatProduct = JSON.parse(jsonDanhSachSP);
+      console.log("danh sách sản phẩm là:");
+      // chuyển danh sách đối tượng sang HTML
+      var HTML = chuyenDanhSachSPSangHTML(creatProduct);
+
+      // gán HTML vào Selection grid
+      var nodeProducts = document.getElementById("products");
+      nodeProducts.innerHTML = HTML;
+
+      function themSPVaoGioHang(idSanPham, soLuong) {
+        alert("thêm vao:" + idSanPham);
+
+        //bước 2: lấy danh sách giỏ hàng trong localstrorage ra sử dụng hàm tái sử dụng bên giohang.js
+        var danhSachItemGioHang = layGioHangTuLocalStorage();
+        console.log(danhSachItemGioHang);
+        // bước 3: cho chạy vòng lập danh sách item vừa lấy từ localstorage và kiểm tra:
+        var coTonTaiItemTrongGioHang = false;
+        for (var i = 0; i < danhSachItemGioHang.length; i++) {
+          var itemGioHangHienTai = danhSachItemGioHang[i];
+
+          // kiểm tra nếu item đã tồn tại thì tăng số lượng và thay đổi giá trị
+          if (itemGioHangHienTai.idSanPham == idSanPham) {
+            danhSachItemGioHang[i].soLuong++;
+            coTonTaiItemTrongGioHang = true;
+          }
+        }
+        // kiểm tra nếu item ko tồn tại  thì tạo ra đối tượng mới thêm vào giỏ hàng
+        if (coTonTaiItemTrongGioHang == false) {
+          var itemGioHang = taoDoiTuongItemGioHang(idSanPham, 1);
+          danhSachItemGioHang.push(itemGioHang);
+        }
+        // lưu trữ xuống localstorage
+        luuGioHangVaoLocalStorage(danhSachItemGioHang);
+      }
+      var userr = new Object();
+      function searchDanhSachSanPham() {
+        var danhSachSanPham = layDanhSachSanPhamDuoiLocalStorage();
+        console.log(danhSachSanPham);
+        var nodeSearch = document.querySelector(".search__input");
+        var search = nodeSearch.value;
+        console.log(search);
+        var usserSearch = danhSachSanPham.filter((danhSachSanPham) => {
+          return danhSachSanPham.ten
+            .toUpperCase()
+            .includes(search.toUpperCase());
+        });
+        console.log(usserSearch);
+        // luuDanhSachSanPhamVaoXuongLocalStorage(danhSachSanPham);
+        // console.log(luuDanhSachSanPhamVaoXuongLocalStorage(danhSachSanPham));
+        var HTML = chuyenDanhSachSPSangHTML(usserSearch);
+
+        var nodeProducts = document.getElementById("products");
+        nodeProducts.innerHTML = HTML;
+      }
+    </script>
+  </body>
+</html>

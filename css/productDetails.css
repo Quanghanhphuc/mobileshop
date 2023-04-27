@@ -1,0 +1,413 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: sans-serif;
+  color: black;
+}
+
+:root {
+  --bck-productDetails: rgb(242, 242, 242);
+  --bck-subMid-Price-GB: rgb(245, 245, 245);
+  --bck-productDetails-item: rgb(255, 255, 255);
+  --bck-sale: rgb(0, 178, 166);
+  --bck-oder: rgb(190, 30, 45);
+  --color-price: rgb(255, 0, 0);
+  --bck-installment: rgb(6, 100, 249);
+  --border: rgb(224, 224, 224);
+  --bck-red: rgb(190, 30, 45);
+  --bck-UuDai: rgb(209, 213, 219);
+}
+body {
+  background: var(--bck-productDetails);
+}
+/* ==============================nav start ======================================== */
+.nav {
+  width: 100%;
+  height: 80px;
+  background-color: bisque;
+}
+.nav #Logo {
+  width: 220px;
+  top: 10px;
+  left: 12%;
+  position: absolute;
+  font-size: 2.5rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.nav ul {
+  float: right;
+  margin-right: 25px;
+}
+.nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 15px;
+}
+.nav ul li a {
+  position: relative;
+  font-size: 18px;
+  color: black;
+  padding: 5px;
+}
+.nav ul li a::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background-color: red;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s linear;
+}
+.nav ul li a:hover:before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav label #btn,
+.nav label #cancel {
+  font-size: 30px;
+  color: rgb(1, 0, 0);
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check {
+  display: none;
+}
+
+@media (max-width: 1012px) {
+  .nav #Logo {
+    width: 130px;
+    top: 17px;
+    left: 10%;
+    font-size: 2.1rem;
+  }
+}
+@media (max-width: 714px) {
+  .nav #Logo {
+    width: 110px;
+    top: 23px;
+    left: 10%;
+    font-size: 1.5rem;
+  }
+  .nav ul li a {
+    position: relative;
+    font-size: 13px;
+    color: black;
+    padding: 5px;
+  }
+  .nav label #btn {
+    display: block;
+  }
+}
+@media (max-width: 688px) {
+  ul {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background: #34495e;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+  }
+  .nav ul li {
+    display: block;
+    margin: 30px 0;
+    line-height: 30px;
+  }
+  .nav ul li a {
+    font-size: 17px;
+  }
+}
+
+#check:checked ~ ul {
+  left: 0;
+}
+#check:checked ~ label #btn {
+  display: none;
+}
+#check:checked ~ label #cancel {
+  display: block;
+}
+/* ==============================nav end================================== */
+.productDescription {
+  display: flex;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.productDescription-left-img {
+  width: 60%;
+  margin: 20px 10px;
+  /* border: 1px solid #34495e; */
+  border-radius: 5px;
+  background: black;
+  /* box-shadow: 1px 1px 1px; */
+}
+.productDescription-left-img img {
+  width: 100%;
+  margin: auto;
+}
+.hinhAnhNho img {
+  width: 100%;
+  cursor: pointer;
+}
+.productDescription-left {
+  width: 50%;
+  border-radius: 5px;
+  padding: 10px 10px;
+  background: var(--bck-productDetails-item);
+}
+.productDescription-left-introduce {
+  max-width: 100%;
+  margin-left: 10px;
+  line-height: 20px;
+}
+.productDescription-left-introduce .introduce {
+  margin-bottom: 10px;
+}
+.productDescription-right {
+  margin: auto;
+  margin-left: 15px;
+  background: var(--bck-productDetails-item);
+  width: 48%;
+  border-radius: 5px;
+}
+.productDescription-name {
+  margin: 5px 5px;
+}
+.productDescription-name .name {
+  font-weight: 900;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+.productDescription-price {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  display: flex;
+}
+.productDescription-price .price-gigabye {
+  padding: 10px 10px;
+  border: 1px solid var(--bck-subMid-Price-GB);
+  border-radius: 0;
+  background: var(--bck-subMid-Price-GB);
+  cursor: pointer;
+  margin-left: 10px;
+}
+/* .productDescription-price .price-gigabye:not(:first-child) {
+  margin-left: 10px;
+} */
+.productDescription-price .price-gigabye:hover {
+  border: 1px solid var(--color-price);
+}
+.productDescription-price .price-gigabye .gigabye {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+}
+.productDescription-price .price-gigabye .price {
+  color: var(--color-price);
+  font-weight: 700;
+}
+
+.color {
+  display: flex;
+  flex-wrap: wrap;
+}
+.color-description {
+  padding: 5px 10px;
+  border: 1px solid;
+  border-radius: 20px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  width: 38%;
+}
+.color-description .text-price {
+  color: black;
+}
+.price1 {
+  background: var(--color-price);
+}
+.status {
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  margin: 0 10px;
+}
+.status p {
+  padding: 15px;
+  padding-left: 10px;
+  color: var(--color-price);
+  font-weight: 600;
+}
+.promotion {
+  border: 1px solid var(--border);
+  margin-top: 30px;
+  margin: 10px;
+  padding: 15px 15px;
+}
+.promotion_sale--0 {
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.promotion_sale--1 {
+  list-style: inside;
+  margin: 20px 0;
+}
+.promotion_sale--1 a:hover {
+  color: blue;
+}
+.promotion_sale::after {
+  position: relative;
+  content: "";
+  width: 100px;
+  height: 10px;
+  color: var(--color-price);
+}
+
+.from_payment {
+  margin: 15px 10px;
+  padding: 15px 10px;
+}
+.from_payment .thanhvien {
+  margin: 10px 0px;
+  padding: 10px 0;
+  padding-left: 10px;
+  border: 1px solid;
+  border-radius: 3px;
+  background: var(--bck-sale);
+  color: white;
+  width: 80%;
+  font-size: 0.8rem;
+}
+
+.from_payment--booknow {
+  background: var(--bck-red);
+  width: 80%;
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 10px;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.from_payment--title {
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+  /* cursor: pointer; */
+}
+
+.from_payment--delivery {
+  font-size: 0.8rem;
+}
+.format_payment {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+.format_payment--installment {
+  background: var(--bck-installment);
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 50%;
+}
+.format_payment--installment:not(:last-child) {
+  margin-right: 20px;
+}
+
+.format_payment--title {
+  text-transform: uppercase;
+  font-family: 700;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+.format_payment--title1 {
+  font-size: 0.8rem;
+}
+
+.uuDaiBanKem {
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  margin: 10px 10px;
+  width: 80%;
+  /* padding: 10px 10px; */
+}
+.from_payment::after {
+  content: "";
+  display: inline-block;
+  width: 80%;
+  background: var(--bck-productDetails);
+  height: 1px;
+  margin-top: 40px;
+}
+.uuDaiBanKem .uuDai {
+  background: var(--bck-UuDai);
+  padding: 10px 0;
+  padding-left: 10px;
+  font-weight: 700;
+}
+
+.uuDaiBanKem ul {
+  margin-top: 10px;
+  list-style: square;
+}
+.uuDaiBanKem .list {
+  margin: 10px 10px;
+}
+.list:not(:last-child) {
+  list-style: inside;
+}
+/* /* ==========================================phần cấu hình==================================== * */
+.lef_configuration {
+  width: 70%;
+  background: var(--bck-oder);
+}
+.configuration {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+  width: 30%;
+  height: auto;
+  background: var(--bck-productDetails-item);
+}
+.cauHinh {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.row {
+  display: flex;
+  width: 100%;
+  margin: 10px 5px;
+}
+.left {
+  margin-right: 20px;
+  width: 50%;
+  padding-left: 5px;
+}
+.right {
+  width: 50%;
+}
+.white {
+  background: var(--bck-subMid-Price-GB);
+  padding: 10px 0;
+  border-radius: 5px;
+}
+/* /* ==========================================phần cấu hình end==================================== * */

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apple</title>
+    <script src="fileJS/sanPham.js"></script>
+  </head>
+  <body>
+    <input type="text" id="timKiem" />
+    <button onclick="timKiemSanPham()">tìm kiếm</button>
+
+    <div id="hienthiketqua"></div>
+    <script>
+      function timKiemSanPham(ten) {
+        var nodeTimKiem = document.getElementById("timKiem");
+        var timKiem = nodeTimKiem.value;
+
+        var layRaKQ = truyXuatDoiTuongTheoTen(timKiem);
+        console.log(layRaKQ);
+
+        var HTML = chuyenDoiTuongSangHTML(layRaKQ);
+        var nodeHienThiKQ = document.getElementById("hienthiketqua");
+        nodeHienThiKQ.innerHTML = HTML;
+      }
+    </script>
+  </body>
+</html>

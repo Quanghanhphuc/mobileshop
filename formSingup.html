@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>From Đăng Ký</title>
+    <link rel="stylesheet" href="fileCSS/otherCSS/sigup.css" />
+    <script src="fileJS/formSigUp.js"></script>
+  </head>
+  <body>
+    <div class="form_SigUp">
+      <h1>Đăng Ký</h1>
+      <div class="accouts">
+        <label for="" class="text">Tài Khoản</label>
+        <input type="text" id="accouts" placeholder="Tên tài khoản" />
+      </div>
+      <div class="passwords">
+        <label for="" class="text">Mật khẩu</label>
+        <input
+          type="password"
+          id="passwords"
+          placeholder="Mật khẩu tài khoản"
+        />
+      </div>
+      <div class="passwords">
+        <label for="" class="text">Nhập lại Mật khẩu</label>
+        <input type="password" id="password" placeholder="Mật khẩu tài khoản" />
+      </div>
+      <div class="ifSigup">
+        <a href="FormLogin.html">Quay lại đăng nhập</a>
+      </div>
+      <div class="btn">
+        <button onclick="dangKy()"><a href="#" id="links">Đăng Ký</a></button>
+      </div>
+    </div>
+    <script>
+      var formDangKy = JSON.parse(localStorage.getItem("account"));
+      if (formDangKy == null) {
+        formDangKy = new Array();
+      }
+
+      function dangKy() {
+        var nodeAccouts = document.getElementById("accouts");
+        var accouts = nodeAccouts.value;
+        accouts.value = "";
+
+        var nodePasswords = document.getElementById("passwords");
+        var passwords = nodePasswords.value;
+
+        var nodePassword = document.getElementById("password");
+        var password = nodePassword.value;
+
+        var dangKy = TaoDoiTuongDangKy(accouts, passwords, password);
+
+        var danhSachTaikhoan = layDanhSachTaiKhoanDuoiLocalStorage();
+        console.log(danhSachTaikhoan);
+
+        if (danhSachTaikhoan == null) {
+          formDangKy.push(dangKy);
+          var a = document.getElementById("links");
+          a.href = "FormLogin.html";
+          alert("đăng ký thành công mời đăng nhập");
+        } else {
+          for (var i = 0; i < danhSachTaikhoan.length; i++) {
+            var taiKhoanHienTai = danhSachTaikhoan[i];
+          }
+          if (taiKhoanHienTai.accouts == accouts) {
+            var a = document.getElementById("links");
+            a.href = "FormLogin.html";
+            formDangKy.push(dangKy);
+            alert("đăng ký thành công mời đăng nhập");
+          } else {
+            alert("mật khẩu hoặc tài khoản tồn tại xin nhập lại");
+          }
+        }
+
+        var jsDanhSachTaiKhoan = JSON.stringify(formDangKy);
+        localStorage.setItem("account", jsDanhSachTaiKhoan);
+        var jsDanhSachTaiKhoan = localStorage.getItem("account");
+      }
+    </script>
+  </body>
+</html>
