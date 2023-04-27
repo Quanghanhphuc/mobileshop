@@ -424,7 +424,7 @@ body {
 }
 .items {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   border-bottom: 1px solid #d1d1d1;
   margin: 10px 0;
   align-items: center;
