@@ -811,12 +811,6 @@ body {
 }
 
 @media (max-width: 760px) {
-  .mobile {
-    width: 760px;
-  }
-  .nav__header {
-    display: none;
-  }
   .technology {
     display: block;
   }
