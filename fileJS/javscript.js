@@ -1,20 +1,19 @@
-var swiper = new Swiper(".swiper", {
-  slidesPerView: 3,
-  direction: getDirection(),
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  on: {
-    resize: function () {
-      swiper.changeDirection(getDirection());
-    },
-  },
-});
+var barIcon = document.getElementById("bar_icon");
 
-function getDirection() {
-  var windowWidth = window.innerWidth;
-  var direction = window.innerWidth <= 760 ? "vertical" : "horizontal";
+var openIcon = document.getElementById("open");
 
-  return direction;
+var openHeader = document.getElementById("nav_header");
+var iconClose = document.getElementById("icon_close");
+var closeIcon = document.getElementById("close");
+
+function openClicl() {
+  openHeader.style.display = "block";
+  closeIcon.style.display = "block";
+  openIcon.style.display = "none";
+}
+
+function closeCLick() {
+  openHeader.style.display = "none";
+  closeIcon.style.display = "none";
+  openIcon.style.display = "block";
 }

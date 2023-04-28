@@ -21,17 +21,27 @@
   </head>
   <body>
     <section class="mobile">
-      <div class="nav__header">
-        <ul>
-          <li><a href="index.html">Trang chủ</a></li>
-          <li><a href="#">Giới thiệu</a></li>
-          <li><a href="#hangDT">Hãng điện thoại</a></li>
-          <li><a href="#">Hệ thống siêu thị</a></li>
-          <li><a href="gioHang.html">Giỏ Hàng</a></li>
-          <li class="hide"><a href="Them-SanPham.html">Thêm Sản Phẩm</a></li>
-          <li><a href="FormLogin.html">Đăng nhập</a></li>
-        </ul>
+      <div id="icon_close" onclick="closeCLick()">
+        <i class="fa-solid fa-xmark close" id="close"></i>
       </div>
+      <div class="bar_icon" id="bar_icon" onclick="openClicl()">
+        <i class="fa-solid fa-bars open" id="open"></i>
+
+        <div class="nav__header" id="nav_header">
+          <ul>
+            <li>
+              <a href="index.html">Trang chủ</a>
+            </li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#hangDT">Hãng điện thoại</a></li>
+            <li><a href="#">Hệ thống siêu thị</a></li>
+            <li><a href="gioHang.html">Giỏ Hàng</a></li>
+            <li class="hide"><a href="Them-SanPham.html">Thêm Sản Phẩm</a></li>
+            <li><a href="FormLogin.html">Đăng nhập</a></li>
+          </ul>
+        </div>
+      </div>
+
       <div class="nav">
         <div class="nav__banner">
           <div class="header__logo">
@@ -327,5 +337,7 @@
         nodeProducts.innerHTML = HTML;
       }
     </script>
+
+    <script src="fileJS/javscript.js"></script>
   </body>
 </html>
