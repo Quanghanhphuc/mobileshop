@@ -13,6 +13,7 @@ function layGioHangTuLocalStorage() {
 
   return gioHang;
 }
+
 function themSanPhamVaoGioHang(idSanPham, gioHang) {
   var gioHangSauKhiDuocThem = gioHang;
   var itemGioHang = taoDoiTuongItemGioHang(idSanPham, 1);

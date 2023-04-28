@@ -109,7 +109,7 @@
               </div>
             </div>
             <h1 class="sum_money">Tổng Tiền</h1>
-            <p class="total_price">Đ</p>
+            <p class="total_price"><span>Đ</span></p>
             <div class="btn_datHang">
               <button>Đặt Hàng</button>
             </div>
@@ -177,6 +177,7 @@
 
         var nodeGioHang = document.getElementById("main");
         nodeGioHang.innerHTML = HTML;
+        tongDonHang();
       }
 
       function chuyenDanhSachItemGioHangSangHTML(danhSachItemGioHang) {
@@ -213,7 +214,7 @@
           "              </div>\n" +
           '              <div class="itemTongTien">\n' +
           '                <div class="item_price">' +
-          giaHienTai.toLocaleString() +
+          giaHienTai +
           "Đ</div>\n" +
           "              </div>\n" +
           '              <div class="delete">\n' +
@@ -237,6 +238,23 @@
         }
         luuGioHangVaoLocalStorage(sanPham);
         hienThiDanhSachItemGioHang();
+      }
+
+      function tongDonHang() {
+        var gioHang = document.getElementById("main");
+
+        var tr = gioHang.children;
+
+        var tongGia = 0;
+        for (var i = 0; i < tr.length; i++) {
+          var td = tr[i].querySelector(".item_price");
+
+          var tongTien = parseInt(td.innerHTML);
+
+          tongGia += tongTien;
+        }
+        document.querySelector(".total_price").innerHTML =
+          tongGia.toLocaleString();
       }
     </script>
   </body>

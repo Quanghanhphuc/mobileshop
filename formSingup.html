@@ -43,7 +43,6 @@
       function dangKy() {
         var nodeAccouts = document.getElementById("accouts");
         var accouts = nodeAccouts.value;
-        accouts.value = "";
 
         var nodePasswords = document.getElementById("passwords");
         var passwords = nodePasswords.value;
@@ -56,16 +55,16 @@
         var danhSachTaikhoan = layDanhSachTaiKhoanDuoiLocalStorage();
         console.log(danhSachTaikhoan);
 
+        var a = document.getElementById("links");
         if (danhSachTaikhoan == null) {
           formDangKy.push(dangKy);
-          var a = document.getElementById("links");
           a.href = "FormLogin.html";
-          alert("đăng ký thành công mời đăng nhập");
+          alert("Đăng ký thành công");
         } else {
           for (var i = 0; i < danhSachTaikhoan.length; i++) {
             var taiKhoanHienTai = danhSachTaikhoan[i];
           }
-          if (taiKhoanHienTai.accouts == accouts) {
+          if (taiKhoanHienTai.accouts != accouts) {
             var a = document.getElementById("links");
             a.href = "FormLogin.html";
             formDangKy.push(dangKy);

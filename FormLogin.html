@@ -37,8 +37,8 @@
             <li><a href="#hangDT">Hãng điện thoại</a></li>
             <li><a href="#">Hệ thống siêu thị</a></li>
             <li><a href="gioHang.html">Giỏ Hàng</a></li>
-            <li class="hide"><a href="Them-SanPham.html">Thêm Sản Phẩm</a></li>
-            <li><a href="FormLogin.html">Đăng nhập</a></li>
+            <li id="hide"><a href="Them-SanPham.html">Thêm Sản Phẩm</a></li>
+            <li id="out"><a href="FormLogin.html">Đăng nhập</a></li>
           </ul>
         </div>
       </div>
@@ -67,36 +67,6 @@
       </div>
     </section>
 
-    <script>
-      function dangNhap() {
-        var nodeAccount = document.getElementById("account");
-        var account = nodeAccount.value;
-        console.log(account);
-
-        var nodePassword = document.getElementById("password");
-        var password = nodePassword.value;
-        console.log(password);
-
-        var danhSachTaiKhoan = layDanhSachTaiKhoanDuoiLocalStorage();
-        console.log(danhSachTaiKhoan);
-
-        if (danhSachTaiKhoan == null) {
-          alert("xin lỗi bạn chưa có tài khoản xin mời đăng ký");
-        } else {
-          for (var i = 0; i < danhSachTaiKhoan.length; i++) {
-            var taiKhoan = danhSachTaiKhoan[i];
-
-            if (taiKhoan.accouts == account && taiKhoan.password == password) {
-              alert("đăng nhập thành công");
-              var x = document.getElementById("links");
-              x.href = "admin.html";
-            } else {
-              alert("Xin lỗi tài khoản hoặc mật khẩu không chính xác");
-            }
-          }
-        }
-      }
-    </script>
     <script src="fileJS/javscript.js"></script>
   </body>
 </html>

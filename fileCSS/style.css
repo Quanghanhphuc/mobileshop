@@ -35,12 +35,8 @@ body {
   color: #333;
   outline: none;
 }
-.hide {
+#hide {
   display: none;
-}
-.mobile {
-  width: 1200px;
-  margin: auto;
 }
 /* -----------------------Nav start-------------------------------- */
 .nav__header ul {
@@ -215,7 +211,7 @@ body {
   position: absolute;
   width: 90%;
   margin-top: -40px;
-  display: flex;
+  display: none;
   justify-content: center;
 }
 .manual-btn {
@@ -473,6 +469,7 @@ body {
 }
 .information_gender {
   margin: 10px 0;
+  display: inline-flex;
 }
 .information_gender input {
   cursor: pointer;
@@ -719,12 +716,12 @@ textarea#moTa {
 /* ------------Them San Pham-------------------- */
 .close {
   float: right;
-  font-size: 30px;
+  font-size: 17px;
   display: none;
-  margin: 15px 15px;
+  margin: 10px;
 }
 .bar_icon .open {
-  margin: 0 10px;
+  margin: 10px 15px;
   display: none;
   font-size: 30px;
 }
@@ -732,7 +729,6 @@ textarea#moTa {
 @media (max-width: 1199px) {
   .mobile {
     margin: 0 auto;
-    width: 1030px;
   }
   .nav__header ul {
     display: flex;
@@ -889,13 +885,34 @@ textarea#moTa {
   .technology {
     display: block;
   }
-
+  .header__name--img {
+    width: 95%;
+  }
+  .slide img {
+    height: 170px;
+  }
+  .slider {
+    height: 170px;
+  }
+  .nav__banner {
+    padding: unset;
+    justify-content: space-around;
+  }
   .bar_icon .open {
     display: block;
     margin: 10px 15px;
-    font-size: 50px;
+    font-size: 20px;
   }
   .header__nav--search .search__input {
+    font-size: 12px;
+    min-width: unset;
+    height: 25px;
+  }
+  .header__nav--search .search__icon i {
+    font-size: 20px;
+  }
+  .header__nav--search {
+    margin: unset;
   }
   .technology .technology_left {
     width: 100%;
@@ -912,7 +929,7 @@ textarea#moTa {
     margin: 5px 15px;
   }
   .nav__header ul li a {
-    font-size: 20px;
+    font-size: 14px;
   }
   .technology_left-text a {
     display: none;
@@ -922,23 +939,25 @@ textarea#moTa {
     flex-wrap: wrap;
   }
   .technology_right-list .text p {
-    font-size: 25px;
+    font-size: 12px;
+    padding: 10px;
   }
+
   .technology_left-list ul li {
-    width: 300px;
-    max-height: 400px;
+    width: 170px;
+    max-height: 300px;
   }
   .technology_left-list ul li img {
-    height: 200px;
+    height: 140px;
   }
   .technology .technology_left-info {
-    font-size: 45px;
+    font-size: 17px;
   }
   .technology .technology_right {
     width: 100%;
   }
   .technology_left-list .technology_text {
-    font-size: 25px;
+    font-size: 12px;
   }
   .technology_right-list {
     width: unset;
@@ -946,8 +965,8 @@ textarea#moTa {
     display: flex;
   }
   .technology_right-list img {
-    width: 300px;
-    height: 200px;
+    width: 140px;
+    height: 100px;
   }
   .navigation-auto {
     margin-top: 245px;
@@ -960,30 +979,34 @@ textarea#moTa {
     display: none;
   }
   .technology_right .technology_right-other span {
-    font-size: 45px;
+    font-size: 17px;
   }
   .nav__banner .header__logo h3 a {
-    font-size: 50px;
+    font-size: 20px;
+  }
+  .items {
+    justify-content: flex-start;
   }
   #products .item {
-    width: 420px;
+    width: 150px;
 
     max-width: unset;
   }
   #products .item .item_title {
-    font-size: 40px;
+    font-size: 15px;
+    min-height: 50px;
   }
   .item_price {
-    font-size: 35px;
+    font-size: 12px;
   }
   #products .item .item_image img {
-    max-height: 350px;
+    max-height: 130px;
   }
   #products .item .btn {
-    font-size: 35px;
+    font-size: 10px;
   }
   #products .item_sale-text {
-    font-size: 25px;
+    font-size: 11px;
   }
   .form_SigUp,
   .form_Login {
@@ -1010,5 +1033,11 @@ textarea#moTa {
     font-size: 13px;
     width: 100%;
     max-width: unset;
+  }
+  .footer_container .footer_colum .footer_col1 h1 {
+    font-size: 12px;
+  }
+  .footer_container .footer_colum .footer_col1 .footer__col1-text p {
+    font-size: 10px;
   }
 }
