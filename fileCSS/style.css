@@ -250,6 +250,7 @@ body {
   width: 90%;
   justify-content: center;
   margin-top: 460px;
+  display: none;
 }
 .navigation-auto div:not(:last-child) {
   margin-right: 40px;
@@ -767,7 +768,7 @@ textarea#moTa {
   }
   .navigation-manual {
     margin-top: -25px;
-
+    display: none;
     width: 100%;
   }
   .technology_left-list ul {
@@ -892,6 +893,9 @@ textarea#moTa {
   .bar_icon .open {
     display: block;
     margin: 10px 15px;
+    font-size: 50px;
+  }
+  .header__nav--search .search__input {
   }
   .technology .technology_left {
     width: 100%;
@@ -913,21 +917,37 @@ textarea#moTa {
   .technology_left-text a {
     display: none;
   }
+  .technology_left-list ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .technology_right-list .text p {
+    font-size: 25px;
+  }
   .technology_left-list ul li {
-    width: 220px;
+    width: 300px;
+    max-height: 400px;
+  }
+  .technology_left-list ul li img {
+    height: 200px;
   }
   .technology .technology_left-info {
-    font-size: 1.1rem;
+    font-size: 45px;
   }
   .technology .technology_right {
     width: 100%;
   }
+  .technology_left-list .technology_text {
+    font-size: 25px;
+  }
   .technology_right-list {
     width: unset;
     max-width: unset;
+    display: flex;
   }
   .technology_right-list img {
-    width: 120px;
+    width: 300px;
+    height: 200px;
   }
   .navigation-auto {
     margin-top: 245px;
@@ -937,7 +957,58 @@ textarea#moTa {
     margin-top: -25px;
 
     width: 100%;
+    display: none;
   }
-}
-@media (max-width: 760px) {
+  .technology_right .technology_right-other span {
+    font-size: 45px;
+  }
+  .nav__banner .header__logo h3 a {
+    font-size: 50px;
+  }
+  #products .item {
+    width: 420px;
+
+    max-width: unset;
+  }
+  #products .item .item_title {
+    font-size: 40px;
+  }
+  .item_price {
+    font-size: 35px;
+  }
+  #products .item .item_image img {
+    max-height: 350px;
+  }
+  #products .item .btn {
+    font-size: 35px;
+  }
+  #products .item_sale-text {
+    font-size: 25px;
+  }
+  .form_SigUp,
+  .form_Login {
+    max-width: 280px;
+  }
+  .accouts,
+  .accout,
+  .password,
+  .passwords {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .accouts label,
+  .passwords label,
+  .accout label,
+  .password label {
+    margin-bottom: 5px;
+  }
+  .accouts input,
+  .passwords input,
+  .accout input,
+  .password input {
+    margin-bottom: 10px;
+    font-size: 13px;
+    width: 100%;
+    max-width: unset;
+  }
 }

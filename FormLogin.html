@@ -21,36 +21,52 @@
     <script src="fileJS/formSigUp.js"></script>
   </head>
   <body>
-    <section class="nav__header">
-      <ul>
-        <li><a href="index.html">Trang chủ</a></li>
-        <li><a href="#">Giới thiệu</a></li>
-        <li><a href="#hangDT">Hãng điện thoại</a></li>
-        <li><a href="#">Hệ thống siêu thị</a></li>
-        <li><a href="gioHang.html">Tra cứu đơn hàng</a></li>
-        <li class="hide"><a href="Them-SanPham.html">Thêm Sản Phẩm</a></li>
-        <li><a href="#">Đăng nhập</a></li>
-      </ul>
+    <section class="mobile">
+      <div id="icon_close" onclick="closeCLick()">
+        <i class="fa-solid fa-xmark close" id="close"></i>
+      </div>
+      <div class="bar_icon" id="bar_icon" onclick="openClicl()">
+        <i class="fa-solid fa-bars open" id="open"></i>
+
+        <div class="nav__header" id="nav_header">
+          <ul>
+            <li>
+              <a href="index.html">Trang chủ</a>
+            </li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#hangDT">Hãng điện thoại</a></li>
+            <li><a href="#">Hệ thống siêu thị</a></li>
+            <li><a href="gioHang.html">Giỏ Hàng</a></li>
+            <li class="hide"><a href="Them-SanPham.html">Thêm Sản Phẩm</a></li>
+            <li><a href="FormLogin.html">Đăng nhập</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="form_Login">
+        <h1>Đăng Nhập</h1>
+        <div class="accout">
+          <label for="" class="text">Tài Khoản</label>
+          <input type="text" id="account" placeholder="Tên tài khoản" />
+        </div>
+        <div class="password">
+          <label for="" class="text">Mật khẩu</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Mật khẩu tài khoản"
+          />
+        </div>
+        <div class="ifSigup">
+          <a href="formSingup.html">Đăng ký tài khoản tại đây</a>
+        </div>
+        <div class="btn">
+          <button onclick="dangNhap()">
+            <a href="#" id="links">Đăng Nhập</a>
+          </button>
+        </div>
+      </div>
     </section>
-    <div class="form_Login">
-      <h1>Đăng Nhập</h1>
-      <div class="accout">
-        <label for="" class="text">Tài Khoản</label>
-        <input type="text" id="account" placeholder="Tên tài khoản" />
-      </div>
-      <div class="password">
-        <label for="" class="text">Mật khẩu</label>
-        <input type="password" id="password" placeholder="Mật khẩu tài khoản" />
-      </div>
-      <div class="ifSigup">
-        <a href="formSingup.html">Đăng ký tài khoản tại đây</a>
-      </div>
-      <div class="btn">
-        <button onclick="dangNhap()">
-          <a href="#" id="links">Đăng Nhập</a>
-        </button>
-      </div>
-    </div>
+
     <script>
       function dangNhap() {
         var nodeAccount = document.getElementById("account");
@@ -81,5 +97,6 @@
         }
       }
     </script>
+    <script src="fileJS/javscript.js"></script>
   </body>
 </html>

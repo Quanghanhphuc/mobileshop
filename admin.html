@@ -19,18 +19,27 @@
     <script src="fileJS/gioHang.js"></script>
   </head>
   <body>
-    <section class="nav__header">
-      <ul>
-        <li><a href="index.html">Trang chủ</a></li>
-        <li><a href="#">Giới thiệu</a></li>
-        <li><a href="#hangDT">Hãng điện thoại</a></li>
-        <li><a href="#">Hệ thống siêu thị</a></li>
-        <li><a href="gioHang.html">Tra cứu đơn hàng</a></li>
-        <li><a href="Them-SanPham.html">Thêm Sản Phẩm</a></li>
-        <li><a href="index.html">Thoát</a></li>
-      </ul>
-    </section>
     <section class="mobile">
+      <div id="icon_close" onclick="closeCLick()">
+        <i class="fa-solid fa-xmark close" id="close"></i>
+      </div>
+      <div class="bar_icon" id="bar_icon" onclick="openClicl()">
+        <i class="fa-solid fa-bars open" id="open"></i>
+
+        <div class="nav__header" id="nav_header">
+          <ul>
+            <li>
+              <a href="index.html">Trang chủ</a>
+            </li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#hangDT">Hãng điện thoại</a></li>
+            <li><a href="#">Hệ thống siêu thị</a></li>
+            <li><a href="gioHang.html">Giỏ Hàng</a></li>
+            <li class="hide"><a href="Them-SanPham.html">Thêm Sản Phẩm</a></li>
+            <li><a href="FormLogin.html">Đăng nhập</a></li>
+          </ul>
+        </div>
+      </div>
       <div class="nav">
         <div class="nav__banner">
           <div class="header__logo">
@@ -46,19 +55,6 @@
             />
             <div class="search__icon" onclick="searchDanhSachSanPham()">
               <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-          </div>
-          <div class="header__nav--oder">
-            <a class="check--oder" href="#">
-              <span class="icon">
-                <i class="fa fa-car"></i>
-              </span>
-              <span class="text">Kiểm tra đơn hàng</span>
-            </a>
-          </div>
-          <div class="header__nav--cart">
-            <div class="cart--logo">
-              <a href="gioHang.html"><i class="fa fa-cart-shopping"></i></a>
             </div>
           </div>
         </div>
@@ -206,6 +202,55 @@
           </div>
         </div>
       </div>
+      <div class="footer">
+        <div class="footer_container">
+          <div class="footer_colum">
+            <div class="footer_col1">
+              <h1>Tổng đài hỗ trợ miễn phí</h1>
+              <div class="footer__col1-text">
+                <p>hot line mua hàng 1800.1212(7h20 - 21h00)</p>
+                <p>hot line khiếu nại 1800.1212(7h20 - 21h00)</p>
+                <p>hot line bảo hành 1800.1212(7h20 - 21h00)</p>
+              </div>
+            </div>
+            <div class="footer_col1">
+              <h1>Thông tin và chính sách</h1>
+              <div class="footer__col1-text">
+                <a href="#"><p>mua hàng và thanh toán online</p></a>
+                <a href="#"><p>Mua hàng trả góp Online</p></a>
+                <a href="#"><p>Tra thông tin đơn hàng</p></a>
+                <a href="#"><p>Tra thông tin bảo hành</p></a>
+                <a href="#"><p>Thông tin hoá đơn mua hàng</p></a>
+                <a href="#"><p>Trung tâm bảo hành chính hãng</p></a>
+              </div>
+            </div>
+            <div class="footer_col1">
+              <h1>Dịch vụ và thông tin khác</h1>
+              <div class="footer__col1-text">
+                <a href="#"><p>Ưu đãi thanh toán</p></a>
+                <a href="#"><p>Quy chế hoạt động</p></a>
+                <a href="#"><p>Chính sách Bảo hành</p></a>
+                <a href="#"><p>Tuyển dụng</p></a>
+                <a href="#"><p>Dịch vụ bảo hành mở rộng</p></a>
+              </div>
+            </div>
+            <div class="footer_col1">
+              <h1>Kết nối với Mobile</h1>
+              <div class="footer_col1-icon">
+                <a href="#"
+                  ><img src="image/imgLogo/cellphones-youtube.png" alt=""
+                /></a>
+                <a href="#"
+                  ><img src="image/imgLogo/mobile-facebook.png" alt=""
+                /></a>
+                <a href="#"><img src="image/imgLogo/instagram.png" alt="" /></a>
+                <a href="#"><img src="image/imgLogo/tiktok.png" alt="" /></a>
+                <a href="#"><img src="image/imgLogo/zalo.png" alt="" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="footer">
       <div class="footer_container">
@@ -325,5 +370,6 @@
         nodeProducts.innerHTML = HTML;
       }
     </script>
+    <script src="fileJS/javscript.js"></script>
   </body>
 </html>
