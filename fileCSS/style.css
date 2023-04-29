@@ -41,12 +41,12 @@ body {
 /* -----------------------Nav start-------------------------------- */
 .nav__header ul {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-end ;
   background: var(--bg-black-100);
 }
 .nav__header ul li {
   list-style: none;
-  margin: 0 15px;
+  margin: 0 20px;
 }
 .nav__header ul li a {
   font-size: 1rem;
@@ -715,7 +715,6 @@ textarea#moTa {
 
 /* ------------Them San Pham-------------------- */
 .close {
-  float: right;
   font-size: 17px;
   display: none;
   margin: 10px;
@@ -724,15 +723,13 @@ textarea#moTa {
   margin: 10px 15px;
   display: none;
   font-size: 30px;
+  padding: 10px;
 }
 /* ----------------Reponsive------------------------- */
 @media (max-width: 1199px) {
-  .mobile {
-    margin: 0 auto;
-  }
   .nav__header ul {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
   }
 
   .header__nav--search .search__input {
@@ -768,7 +765,7 @@ textarea#moTa {
     width: 100%;
   }
   .technology_left-list ul {
-    justify-content: unset;
+    justify-content: space-between;
   }
   .technology_left-list ul li {
     margin: 10px 10px;
@@ -783,28 +780,48 @@ textarea#moTa {
   .technology .technology_right {
     width: 40%;
   }
+  .technology_left-list .technology_text {
+    font-size: 13px;
+  }
+  .technology_right-list .text p {
+    font-size: 13px;
+  }
   .technology_right-list {
     max-width: 400px;
   }
   #products .item {
-    max-width: 210px;
+    max-width: 155px;
+  }
+  #products .items {
+    justify-content: space-between;
+  }
+  #products .item .item_image img {
+    max-height: 150px;
+  }
+  #products .item .item_title {
+    font-size: 14px;
+  }
+  .item_price {
+    font-size: 13px;
+  }
+  #products .item_sale-text {
+    font-size: 12px;
+  }
+  #products .item .btn {
+    font-size: 11px;
+    padding: 10px 20px;
   }
 }
 
 @media (max-width: 990px) {
-  .mobile {
-    margin: 0 auto;
-  }
   .main_oder .itemName span {
-    font-size: 25px;
+    font-size: 15px;
   }
   .information_gender {
     display: flex;
     justify-content: flex-start;
   }
-  .item_price {
-    font-size: 20px;
-  }
+
   .nav__header ul li a {
     font-size: 14px;
   }
@@ -819,7 +836,7 @@ textarea#moTa {
   }
 
   .header__name--img {
-    width: 75%;
+    width: 90%;
   }
   .slider {
     height: 270px;
@@ -866,7 +883,9 @@ textarea#moTa {
   .technology_right-list .text p {
     font-size: 13px;
   }
-
+  #products .item {
+    max-width: 200px;
+  }
   .technology .technology_left {
     width: 70%;
   }
@@ -875,9 +894,6 @@ textarea#moTa {
   }
   .technology_right-list {
     width: 250px;
-  }
-  #products .item {
-    max-width: 210px;
   }
 }
 
@@ -891,6 +907,9 @@ textarea#moTa {
   .slide img {
     height: 170px;
   }
+  .footer_col1-icon .img {
+    width: 40px;
+  }
   .slider {
     height: 170px;
   }
@@ -900,8 +919,9 @@ textarea#moTa {
   }
   .bar_icon .open {
     display: block;
-    margin: 10px 15px;
+    margin: 0 5px;
     font-size: 20px;
+    position: relative;
   }
   .header__nav--search .search__input {
     font-size: 12px;
@@ -919,17 +939,24 @@ textarea#moTa {
   }
   .nav__header {
     display: none;
+    position: absolute;
+    margin: 2px;
+    width: 25%;
   }
   .nav__header ul {
     flex-direction: column;
-    padding-left: 20px;
-    background-color: white;
+    padding-left: 10px;
+    opacity: 0.9;
+    border-radius: 5px;
   }
-  .nav__header ul li {
-    margin: 5px 15px;
-  }
+
   .nav__header ul li a {
-    font-size: 14px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .close {
+    font-size: 20px;
+    margin: 5px 15px;
   }
   .technology_left-text a {
     display: none;
@@ -985,7 +1012,7 @@ textarea#moTa {
     font-size: 20px;
   }
   .items {
-    justify-content: flex-start;
+    padding: unset;
   }
   #products .item {
     width: 150px;
@@ -993,11 +1020,18 @@ textarea#moTa {
     max-width: unset;
   }
   #products .item .item_title {
-    font-size: 15px;
-    min-height: 50px;
+    font-size: 12px;
+    min-height: 25px;
   }
   .item_price {
-    font-size: 12px;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  .information h1 {
+    font-weight: 500;
+  }
+  .information_address .yeu_cau input {
+    max-width: 410px;
   }
   #products .item .item_image img {
     max-height: 130px;
@@ -1006,7 +1040,243 @@ textarea#moTa {
     font-size: 10px;
   }
   #products .item_sale-text {
+    font-size: 10px;
+  }
+  .form_SigUp,
+  .form_Login {
+    max-width: 280px;
+  }
+  .accouts,
+  .accout,
+  .password,
+  .passwords {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .accouts label,
+  .passwords label,
+  .accout label,
+  .password label {
+    margin-bottom: 5px;
+  }
+  .accouts input,
+  .passwords input,
+  .accout input,
+  .password input {
+    margin-bottom: 10px;
+    font-size: 13px;
+    width: 100%;
+    max-width: unset;
+  }
+  .footer_container .footer_colum .footer_col1 h1 {
+    font-size: 12px;
+  }
+  .footer_container .footer_colum .footer_col1 .footer__col1-text {
+    padding: 5px 10px;
+  }
+  .footer_container .footer_colum .footer_col1 .footer__col1-text p {
+    font-size: 10px;
+  }
+  #products {
+    padding: unset;
+  }
+  #products .item .btn {
+    padding: 10px 15px;
+  }
+  .footer_container .footer_colum {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 457px) {
+  .information_address .yeu_cau input {
+    max-width: 100%;
+  }
+  .information button {
+    padding: 10px 50px;
+  }
+  .information_name input,
+  .information_address .tinh_huyen input,
+  .information_address .phuong_soNha input {
+    width: 100%;
+  }
+  .nav__header {
+    width: 45%;
+  }
+  .nav__header ul li {
+    margin: unset;
+  }
+  .nav__header ul li a {
+    font-size: 12px;
+  }
+}
+@media (max-width: 415px) {
+  .technology {
+    display: block;
+  }
+  .nav__header ul li {
+    margin: unset;
+  }
+  .header__name--img {
+    width: 90%;
+  }
+  .slide img {
+    height: 170px;
+  }
+  .slider {
+    height: 170px;
+  }
+  .nav__banner {
+    padding: unset;
+    justify-content: space-around;
+  }
+  .bar_icon .open {
+    display: block;
+    margin: 0 10px;
+
+    font-size: 20px;
+  }
+  .header__nav--search .search__input {
+    font-size: 12px;
+    min-width: unset;
+    height: 25px;
+    width: 100%;
+    padding-right: 30px;
+    padding-left: 10px;
+  }
+  .header__nav--search .search__icon i {
+    font-size: 15px;
+  }
+  .header__nav--search {
+    margin: unset;
+    max-width: 150px;
+  }
+  .technology .technology_left {
+    width: 100%;
+  }
+  .nav__header {
+    display: none;
+  }
+  .nav__header ul {
+    flex-direction: column;
+
+    background-color: white;
+  }
+
+  /* .nav__header ul li a {
+    font-size: 14px;
+  } */
+  .information_name {
+    margin: unset;
+  }
+  .information_name input {
+    margin: 10px 0;
+  }
+  .information_address,
+  .tinh_huyen,
+  .phuong_soNha,
+  .yeu_cau input {
+    margin: unset;
+  }
+  .technology_left-text a {
+    display: none;
+  }
+  .technology_left-list ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .technology_right-list .text p {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .technology_left-list ul li {
+    width: 170px;
+    max-height: 300px;
+  }
+  .technology_left-list ul li img {
+    height: 140px;
+  }
+  .technology .technology_left-info {
+    font-size: 17px;
+  }
+  .technology .technology_right {
+    width: 100%;
+  }
+  .technology_left-list .technology_text {
+    font-size: 12px;
+  }
+  .technology_right-list {
+    width: unset;
+    max-width: unset;
+    display: flex;
+  }
+  .technology_right-list img {
+    width: 140px;
+    height: 100px;
+  }
+  .navigation-auto {
+    margin-top: 245px;
+    width: 100%;
+  }
+  .navigation-manual {
+    margin-top: -25px;
+
+    width: 100%;
+    display: none;
+  }
+  .technology_right .technology_right-other span {
+    font-size: 17px;
+  }
+  .nav__banner .header__logo h3 a {
+    font-size: 20px;
+  }
+  .main_oder .itemImages {
+    width: 80px;
+  }
+  .main_oder .itemName {
+    width: 100px;
+    line-height: 16px;
+  }
+  .main_oder .itemName span {
     font-size: 11px;
+    font-weight: 700;
+  }
+  .items {
+    padding: unset;
+  }
+  #products .item {
+    width: 170px;
+
+    max-width: unset;
+  }
+  .itemTongTien {
+    min-width: 50px;
+  }
+  .main_oder .itemSoLuong {
+    max-width: 25px;
+  }
+  .main_oder .itemSoLuong input {
+  }
+  #products .item .item_title {
+    font-size: 12px;
+    min-height: 25px;
+  }
+  .item_price {
+    font-size: 12px;
+    font-weight: 500;
+  }
+  #products .item .item_image img {
+    max-height: 130px;
+  }
+  #products .item .btn {
+    font-size: 10px;
+  }
+  #products .item_sale-text {
+    font-size: 10px;
+  }
+  .information h1 {
+    font-weight: 500;
   }
   .form_SigUp,
   .form_Login {
@@ -1039,5 +1309,35 @@ textarea#moTa {
   }
   .footer_container .footer_colum .footer_col1 .footer__col1-text p {
     font-size: 10px;
+  }
+  #products {
+    padding: unset;
+  }
+  #products .item .btn {
+    padding: 10px 15px;
+  }
+  .them-moi-san-pham {
+    width: 80%;
+  }
+  textarea#moTa {
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 394px) {
+  #products .item {
+    width: 160px;
+  }
+  .technology_left-list ul li {
+    width: 160px;
+  }
+}
+
+@media (max-width: 375px) {
+  #products .item {
+    width: 145px;
+  }
+  .technology_left-list ul li {
+    width: 150px;
   }
 }
