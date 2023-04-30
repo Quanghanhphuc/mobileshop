@@ -41,7 +41,7 @@ body {
 /* -----------------------Nav start-------------------------------- */
 .nav__header ul {
   display: flex;
-  justify-content: flex-end ;
+  justify-content: flex-end;
   background: var(--bg-black-100);
 }
 .nav__header ul li {
@@ -1341,3 +1341,17 @@ textarea#moTa {
     width: 150px;
   }
 }
+@media (max-width: 281px) {
+  #products .item {
+    width: 105px;
+  }
+  #products .item .btn {
+    padding: 5px 10px;
+    font-size: 8px;
+  }
+  .technology_left-list ul li {
+    width: 215px;
+  }
+  .nav__banner .header__logo h3 a{
+    font-size: 15px;
+  }

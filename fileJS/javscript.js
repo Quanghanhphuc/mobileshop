@@ -21,6 +21,7 @@ function closeCLick() {
 var hide = document.getElementById("hide");
 var closeOut = document.getElementById("out");
 console.log(closeOut);
+
 function dangNhap() {
   var nodeAccount = document.getElementById("account");
   var account = nodeAccount.value;

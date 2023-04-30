@@ -4,6 +4,7 @@ keyLocalStorageItemGioHang = "danhSachItemGioHang";
 function TaoDoiTuongSanPham(hinhAnh, ten, giaGoc, hangDT, moTa, id) {
   var sanPham = new Object();
   sanPham.hinhAnh = hinhAnh;
+  console.log(sanPham.hinhAnh);
   sanPham.ten = ten;
   sanPham.giaGoc = giaGoc;
   sanPham.hangDT = hangDT;
@@ -55,7 +56,7 @@ function chuyenDoiTuongSangHTML(sanPham) {
   html += '<div class="item">';
 
   html += ' <div class="item_image">';
-  html += '<img src="' + sanPham.hinhAnh + '" alt=""/>';
+  html += '<img src="' + sanPham.hinhAnh + '" alt="" id="image"/>';
   html += "  </div>";
   html += '  <h2 class="item_title">' + sanPham.ten + "</h2>";
   html += ' <div class="item_price">';
@@ -142,4 +143,14 @@ function luuDanhSachSanPhamVaoXuongLocalStorage(keyLocalStorageSanPham) {
   var jsDanhSachSanPham = JSON.stringify(keyLocalStorageSanPham);
   // bước 2: lưu vào localStorage
   localStorage.setItem(keyLocalStorageSanPham, jsDanhSachSanPham);
+}
+function chooseFile(fileInput) {
+  if (fileInput.files && fileInput.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $("#image").attr("src", e.target.result);
+    };
+
+    reader.readAsDataURL(fileInput.files[0]);
+  }
 }
