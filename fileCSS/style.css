@@ -1376,13 +1376,16 @@ textarea#moTa {
 
 @media (max-width: 375px) {
   #products .item {
-    width: 105px;
+    width: 130px;
   }
   .technology_left-list ul li {
     width: 100%;
   }
+  #products .item .btn {
+    padding: 10px 10px;
 }
-@media (max-width: 281px) {
+}
+@media (max-width: 300px) {
   #products .item {
     width: 100%;
   }
