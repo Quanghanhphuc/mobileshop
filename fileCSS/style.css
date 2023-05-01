@@ -43,6 +43,7 @@ body {
   display: flex;
   justify-content: flex-end;
   background: var(--bg-black-100);
+  transition: 0.5s;
 }
 .nav__header ul li {
   list-style: none;
@@ -693,7 +694,7 @@ select#hangDT {
   padding: 5px 10px;
 }
 textarea#moTa {
-  min-width: 400px;
+  width: 100%;
 }
 
 .them-moi-san-pham button {
@@ -710,7 +711,7 @@ textarea#moTa {
 }
 
 .them-moi-san-pham button:hover {
-  background: yellow;
+  background: rgb(160, 160, 151);
 }
 
 /* ------------Them San Pham-------------------- */
@@ -821,9 +822,14 @@ textarea#moTa {
     display: flex;
     justify-content: flex-start;
   }
-
+  .them-moi-san-pham label{
+    font-size: 12px;
+  }
+  select#hangDT{
+    padding: 4px 5px;
+  }
   .nav__header ul li a {
-    font-size: 14px;
+    font-size: 11px;
   }
   .nav__banner {
     display: flex;
@@ -971,7 +977,7 @@ textarea#moTa {
   }
 
   .technology_left-list ul li {
-    width: 170px;
+    width: 200px;
     max-height: 300px;
   }
   .technology_left-list ul li img {
@@ -1015,7 +1021,7 @@ textarea#moTa {
     padding: unset;
   }
   #products .item {
-    width: 150px;
+    width: 180px;
 
     max-width: unset;
   }
@@ -1088,6 +1094,42 @@ textarea#moTa {
   }
 }
 
+@media (max-width: 641px){
+  #products .item{
+    width: 170px;
+  }
+  .technology_left-list ul li{
+    width: 160px;
+  }
+}
+@media (max-width: 611px){
+  #products .item{
+    width: 160px;
+  }
+  
+}
+@media (max-width: 581px){
+  #products .item{
+    width: 130px;
+  }
+  .technology_left-list ul li{
+    width: 230px;
+  }
+  #products .item .btn{
+    padding: 10px 10px;
+  }
+}
+@media (max-width: 525px){
+  #products .item{
+    width: 170px;
+  }
+  .technology_left-list ul li{
+    width: 180px;
+  }
+  #products .item .btn{
+    padding: 10px 10px;
+  }
+}
 @media (max-width: 457px) {
   .information_address .yeu_cau input {
     max-width: 100%;
@@ -1191,7 +1233,7 @@ textarea#moTa {
   }
 
   .technology_left-list ul li {
-    width: 170px;
+    width: 160px;
     max-height: 300px;
   }
   .technology_left-list ul li img {
@@ -1246,7 +1288,7 @@ textarea#moTa {
     padding: unset;
   }
   #products .item {
-    width: 170px;
+    width: 160px;
 
     max-width: unset;
   }
@@ -1319,35 +1361,34 @@ textarea#moTa {
   .them-moi-san-pham {
     width: 80%;
   }
-  textarea#moTa {
-    min-width: 250px;
-  }
+ 
 }
 
 @media (max-width: 394px) {
   #products .item {
-    width: 160px;
+    width: 150px;
   }
   .technology_left-list ul li {
-    width: 160px;
+    width: 100%;
+    
   }
 }
 
 @media (max-width: 375px) {
   #products .item {
-    width: 145px;
+    width: 105px;
   }
   .technology_left-list ul li {
-    width: 150px;
+    width: 100%;
   }
 }
 @media (max-width: 281px) {
   #products .item {
-    width: 105px;
+    width: 100%;
   }
   #products .item .btn {
-    padding: 5px 10px;
-    font-size: 8px;
+    padding: 10px 30px;
+    font-size: 10px;
   }
   .technology_left-list ul li {
     width: 215px;
