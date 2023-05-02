@@ -4,7 +4,7 @@ keyLocalStorageItemGioHang = "danhSachItemGioHang";
 function TaoDoiTuongSanPham(hinhAnh, ten, giaGoc, hangDT, moTa, id) {
   var sanPham = new Object();
   sanPham.hinhAnh = hinhAnh;
-  console.log(sanPham.hinhAnh);
+
   sanPham.ten = ten;
   sanPham.giaGoc = giaGoc;
   sanPham.hangDT = hangDT;
@@ -14,7 +14,18 @@ function TaoDoiTuongSanPham(hinhAnh, ten, giaGoc, hangDT, moTa, id) {
   } else {
     sanPham.id = taoID();
   }
-
+  // sanPham.hinhAnh = function chooseFile(fileInput) {
+  //   if (fileInput.files && fileInput.files[0])
+  //     console.log(fileInput.files && fileInput.files[0]);
+  //   {
+  //     var reader = new FileReader();
+  //     console.log(reader);
+  //     reader.onload = function (e) {
+  //       $("#image").attr("src", e.target.result);
+  //     };
+  //     reader.readAsDataURL(fileInput.files[0]);
+  //   }
+  // };
   sanPham.tinhGiaBan = function () {
     var giaBan = this.giaGoc * (1 - this.phanTramGiamGia);
     return giaBan;
@@ -125,6 +136,7 @@ function laySanPhamTheoID(idSanPham) {
   );
   return sanPham;
 }
+
 /**lấy toàn bộ danh sách dưới localstorage */
 function layDanhSachSanPhamDuoiLocalStorage() {
   var jsDanhSanPham = localStorage.getItem(keyLocalStorageSanPham);
@@ -143,4 +155,12 @@ function luuDanhSachSanPhamVaoXuongLocalStorage(keyLocalStorageSanPham) {
   var jsDanhSachSanPham = JSON.stringify(keyLocalStorageSanPham);
   // bước 2: lưu vào localStorage
   localStorage.setItem(keyLocalStorageSanPham, jsDanhSachSanPham);
+}
+
+// ---- chuyên đổi danh sách sản phẩm Quản lý sản phẩm------
+function luuSanPhamVaoGioHangSauKhiXoa(xoaKhoiProduct) {
+  // bước 1: chuyển thành chuỗi json
+  var jsXoaKhoiProduct = JSON.stringify(xoaKhoiProduct);
+  // bước 2: lưu vào localStorage
+  localStorage.setItem(keyLocalStorageSanPham, jsXoaKhoiProduc);
 }

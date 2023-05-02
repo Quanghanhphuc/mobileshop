@@ -9,75 +9,53 @@
     <script src="fileJS/formSigUp.js"></script>
   </head>
   <body>
-    <div class="form_SigUp">
+    <div id="toasts"></div>
+    <div class="form">
       <h1>Đăng Ký</h1>
       <div class="accouts">
-        <label for="" class="text">Tài Khoản</label>
-        <input type="text" id="accouts" placeholder="Tên tài khoản" />
+        <label for="accounts" class="text">Tài Khoản</label>
+        <div class="inputss">
+          <input
+            type="text"
+            id="account"
+            class="input_check"
+            placeholder="Tên tài khoản"
+          />
+          <label for="accounts" class="error"></label>
+        </div>
       </div>
       <div class="passwords">
-        <label for="" class="text">Mật khẩu</label>
-        <input
-          type="password"
-          id="passwords"
-          placeholder="Mật khẩu tài khoản"
-        />
+        <label for="password" class="text">Mật khẩu</label>
+        <div class="inputss">
+          <input
+            type="password"
+            id="password"
+            class="input_check"
+            placeholder="Mật khẩu tài khoản"
+          />
+          <label for="passwords" class="error"></label>
+        </div>
       </div>
-      <div class="passwords">
-        <label for="" class="text">Nhập lại Mật khẩu</label>
-        <input type="password" id="password" placeholder="Mật khẩu tài khoản" />
+      <div class="email">
+        <label for="password" class="text">Email</label>
+        <div class="inputss">
+          <input
+            type="email"
+            id="email"
+            class="input_check"
+            placeholder="Email "
+          />
+          <label for="password" class="error"></label>
+        </div>
       </div>
       <div class="ifSigup">
         <a href="FormLogin.html">Quay lại đăng nhập</a>
       </div>
       <div class="btn">
-        <button onclick="dangKy()"><a href="#" id="links">Đăng Ký</a></button>
+        <button onclick="dangKy()">Đăng Ký</button>
       </div>
     </div>
-    <script>
-      var formDangKy = JSON.parse(localStorage.getItem("account"));
-      if (formDangKy == null) {
-        formDangKy = new Array();
-      }
-
-      function dangKy() {
-        var nodeAccouts = document.getElementById("accouts");
-        var accouts = nodeAccouts.value;
-
-        var nodePasswords = document.getElementById("passwords");
-        var passwords = nodePasswords.value;
-
-        var nodePassword = document.getElementById("password");
-        var password = nodePassword.value;
-
-        var dangKy = TaoDoiTuongDangKy(accouts, passwords, password);
-
-        var danhSachTaikhoan = layDanhSachTaiKhoanDuoiLocalStorage();
-        console.log(danhSachTaikhoan);
-
-        var a = document.getElementById("links");
-        if (danhSachTaikhoan == null) {
-          formDangKy.push(dangKy);
-          a.href = "FormLogin.html";
-          alert("Đăng ký thành công");
-        } else {
-          for (var i = 0; i < danhSachTaikhoan.length; i++) {
-            var taiKhoanHienTai = danhSachTaikhoan[i];
-          }
-          if (taiKhoanHienTai.accouts != accouts) {
-            var a = document.getElementById("links");
-            a.href = "FormLogin.html";
-            formDangKy.push(dangKy);
-            alert("đăng ký thành công mời đăng nhập");
-          } else {
-            alert("mật khẩu hoặc tài khoản tồn tại xin nhập lại");
-          }
-        }
-
-        var jsDanhSachTaiKhoan = JSON.stringify(formDangKy);
-        localStorage.setItem("account", jsDanhSachTaiKhoan);
-        var jsDanhSachTaiKhoan = localStorage.getItem("account");
-      }
-    </script>
+    <script></script>
+    <script src="fileJS/javscript.js"></script>
   </body>
 </html>

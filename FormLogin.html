@@ -42,31 +42,42 @@
           </ul>
         </div>
       </div>
-      <div class="form_Login">
+      <div id="toasts"></div>
+
+      <div class="form">
         <h1>Đăng Nhập</h1>
         <div class="accout">
           <label for="" class="text">Tài Khoản</label>
-          <input type="text" id="account" placeholder="Tên tài khoản" />
+          <div class="inputss">
+            <input
+              type="text"
+              id="account"
+              class="input_check"
+              placeholder="Tên tài khoản"
+            />
+            <label for="account" class="error"></label>
+          </div>
         </div>
         <div class="password">
           <label for="" class="text">Mật khẩu</label>
-          <input
-            type="password"
-            id="password"
-            placeholder="Mật khẩu tài khoản"
-          />
+          <div class="inputss">
+            <input
+              type="password"
+              id="password"
+              class="input_check"
+              placeholder="Mật khẩu tài khoản"
+            />
+            <label for="password" class="error"></label>
+          </div>
         </div>
         <div class="ifSigup">
-          <a href="formSingup.html">Đăng ký tài khoản tại đây</a>
+          <a href="#">Đăng ký tài khoản tại đây</a>
         </div>
         <div class="btn">
-          <button onclick="dangNhap()">
-            <a href="#" id="links">Đăng Nhập</a>
-          </button>
+          <button onclick="dangNhap()">Đăng Nhập</button>
         </div>
       </div>
     </section>
-
     <script src="fileJS/javscript.js"></script>
   </body>
 </html>

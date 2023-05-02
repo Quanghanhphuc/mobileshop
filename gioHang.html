@@ -36,7 +36,6 @@
             <li><a href="#hangDT">Hãng điện thoại</a></li>
             <li><a href="#">Hệ thống siêu thị</a></li>
             <li><a href="gioHang.html">Giỏ Hàng</a></li>
-            <li class="hide"><a href="Them-SanPham.html">Thêm Sản Phẩm</a></li>
             <li><a href="FormLogin.html">Đăng nhập</a></li>
           </ul>
         </div>
@@ -172,7 +171,7 @@
 
       function hienThiDanhSachItemGioHang() {
         var danhSachItemGioHang = layGioHangTuLocalStorage();
-
+        console.log(danhSachItemGioHang);
         var HTML = chuyenDanhSachItemGioHangSangHTML(danhSachItemGioHang);
 
         var nodeGioHang = document.getElementById("main");
@@ -192,6 +191,7 @@
 
       function chuyenDoiTuongItemGioHangSangHTML(itemGioHang) {
         var sanPham = laySanPhamTheoID(itemGioHang.idSanPham);
+        console.log(itemGioHang.idSanPham);
 
         var giaHienTai = itemGioHang.soLuong * sanPham.giaGoc;
 
