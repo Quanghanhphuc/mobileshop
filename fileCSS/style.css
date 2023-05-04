@@ -137,6 +137,18 @@ body {
 .nav__banner .header__nav--cart .cart--logo:hover a {
   opacity: 0.5;
 }
+.menuAu {
+  display: flex;
+  align-items: center;
+}
+.menuAu i {
+  font-size: 30px;
+}
+.menuAu h3 {
+  margin-left: 25px;
+  font-size: 25px;
+  font-weight: 400;
+}
 /* -----------------------Nav end-------------------------------- */
 
 /* -----------------------Header start-------------------------------- */

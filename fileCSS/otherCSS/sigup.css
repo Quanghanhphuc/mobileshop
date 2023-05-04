@@ -22,7 +22,7 @@
 }
 
 .form {
-  max-width: 350px;
+  max-width: 300px;
   margin: 10% auto;
   box-shadow: var(--box-shadow);
   border-radius: 5px;
@@ -58,7 +58,7 @@
 .accout input,
 .passwords input,
 .password input {
-  max-width: 200px;
+  max-width: 150px;
   padding: 7px 5px;
   margin-bottom: 5px;
   outline: none;
