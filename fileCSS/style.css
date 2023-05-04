@@ -41,9 +41,8 @@ body {
 /* -----------------------Nav start-------------------------------- */
 .nav__header ul {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-around;
   background: var(--bg-black-100);
-  transition: 0.5s;
 }
 .nav__header ul li {
   list-style: none;
@@ -148,6 +147,12 @@ body {
   margin-left: 25px;
   font-size: 25px;
   font-weight: 400;
+}
+.bar_icon {
+  margin-left: 10px;
+  position: fixed;
+  top: 0;
+  transition: 0.5s;
 }
 /* -----------------------Nav end-------------------------------- */
 
@@ -741,17 +746,13 @@ textarea#moTa {
 }
 .bar_icon .open {
   margin: 10px 15px;
-  display: none;
+  display: block;
   font-size: 30px;
-  padding: 10px;
+  padding: 5px 0;
+  display: none;
 }
 /* ----------------Reponsive------------------------- */
 @media (max-width: 1199px) {
-  .nav__header ul {
-    display: flex;
-    justify-content: space-between;
-  }
-
   .header__nav--search .search__input {
     min-width: 480px;
   }
@@ -946,7 +947,7 @@ textarea#moTa {
     display: block;
     margin: 0 5px;
     font-size: 20px;
-    position: relative;
+    transition: 0.5s;
   }
   .header__nav--search .search__input {
     font-size: 12px;
@@ -963,18 +964,28 @@ textarea#moTa {
     width: 100%;
   }
   .nav__header {
-    display: none;
-    position: absolute;
+    display: block;
+    position: fixed;
     margin: 2px;
-    width: 25%;
+    width: 190px;
+    height: 100%;
+    top: 0;
+    left: -190px;
+    transition: 0.5s;
   }
   .nav__header ul {
     flex-direction: column;
     padding-left: 10px;
     opacity: 0.9;
     border-radius: 5px;
+    height: 100%;
+    justify-content: unset;
   }
-
+  .nav__header ul li {
+    margin: 10px 0;
+    border-bottom: 1px solid #8888;
+    border-bottom-right-radius: 10px;
+  }
   .nav__header ul li a {
     font-size: 13px;
     font-weight: 500;
@@ -1130,6 +1141,16 @@ textarea#moTa {
   #products .item {
     width: 130px;
   }
+  .header__logo {
+    display: none;
+  }
+  .nav__banner {
+    justify-content: right;
+    margin-bottom: 15px;
+  }
+  .header__nav--search {
+    margin-top: 10px;
+  }
   .technology_left-list ul li {
     width: 230px;
   }
@@ -1188,11 +1209,9 @@ textarea#moTa {
   }
   .nav__banner {
     padding: unset;
-    justify-content: space-around;
   }
   .bar_icon .open {
     display: block;
-    margin: 0 10px;
 
     font-size: 20px;
   }
@@ -1208,15 +1227,14 @@ textarea#moTa {
     font-size: 15px;
   }
   .header__nav--search {
-    margin: unset;
     max-width: 150px;
   }
   .technology .technology_left {
     width: 100%;
   }
-  .nav__header {
-    display: none;
-  }
+  /* .nav__header {
+    display: block;
+  } */
   .nav__header ul {
     flex-direction: column;
 

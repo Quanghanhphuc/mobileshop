@@ -102,7 +102,7 @@ a {
   align-items: center;
   justify-content: space-between;
   box-shadow: var(--box-shadow);
-  width: 400px;
+  width: 280px;
   margin: 10px;
   padding: 10px 15px;
   border-radius: 4px;
@@ -112,7 +112,7 @@ a {
 @keyframes sliderToast {
   from {
     opacity: 0;
-    transform: translateX(-400px);
+    transform: translateX(-280px);
   }
   to {
     opacity: 1;
@@ -130,12 +130,12 @@ a {
   color: #ffc107;
 }
 .toast_body--title {
-  font-size: 18px;
+  font-size: 16px;
   color: #ffc107;
   font-weight: 400;
 }
 .toast_body--message {
-  font-size: 14px;
+  font-size: 13px;
   color: #333;
   max-width: 300px;
 }

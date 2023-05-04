@@ -22,25 +22,21 @@
   </head>
   <body>
     <section class="mobile">
-      <div id="icon_close" onclick="closeCLick()">
-        <i class="fa-solid fa-xmark close" id="close"></i>
-      </div>
-      <div class="bar_icon" id="bar_icon" onclick="openClicl()">
+      <div class="bar_icon" id="bar_icon" onclick="onclickOpen(this)">
         <i class="fa-solid fa-bars open" id="open"></i>
+      </div>
+      <div class="nav__header" id="nav_header">
+        <ul>
+          <li>
+            <a href="index.html">Trang chủ</a>
+          </li>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#hangDT">Hãng điện thoại</a></li>
+          <li><a href="#">Hệ thống siêu thị</a></li>
+          <li><a href="gioHang.html">Giỏ Hàng</a></li>
 
-        <div class="nav__header" id="nav_header">
-          <ul>
-            <li>
-              <a href="index.html">Trang chủ</a>
-            </li>
-            <li><a href="#">Giới thiệu</a></li>
-            <li><a href="#hangDT">Hãng điện thoại</a></li>
-            <li><a href="#">Hệ thống siêu thị</a></li>
-            <li><a href="gioHang.html">Giỏ Hàng</a></li>
-
-            <li><a href="FormLogin.html">Đăng nhập</a></li>
-          </ul>
-        </div>
+          <li><a href="FormLogin.html">Đăng nhập</a></li>
+        </ul>
       </div>
 
       <div class="nav">
@@ -50,7 +46,7 @@
               <a href="index.html"><span>M</span>obile.com</a>
             </h3>
           </div>
-          <div class="header__nav--search">
+          <div id="search" class="header__nav--search">
             <input
               type="text"
               class="search__input"

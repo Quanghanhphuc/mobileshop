@@ -8,26 +8,6 @@ function layDanhSachTaiKhoanDuoiLocalStorage() {
   return danhSachTaiKhoan;
 }
 
-var barIcon = document.getElementById("bar_icon");
-
-var openIcon = document.getElementById("open");
-
-var openHeader = document.getElementById("nav_header");
-var iconClose = document.getElementById("icon_close");
-var closeIcon = document.getElementById("close");
-
-function openClicl() {
-  openHeader.style.display = "block";
-  closeIcon.style.display = "block";
-  openIcon.style.display = "none";
-}
-
-function closeCLick() {
-  openHeader.style.display = "none";
-  closeIcon.style.display = "none";
-  openIcon.style.display = "block";
-}
-
 function TaoDoiTuongDangKy(account, password, email) {
   var dangKy = new Object();
   dangKy.account = account;
@@ -94,6 +74,7 @@ function dangKy() {
     showLoi();
   } else {
     formDangKy.push(taoDoiTuogDanhSachTK);
+    showThanhCongThongBao();
   }
 
   localStorage.setItem("account", JSON.stringify(formDangKy));
@@ -159,10 +140,10 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
     }
   };
   var toastIcon = {
-    thanhCong: " fa-solid fa-check",
-    loi: " fa-solid fa-info",
+    thanhCong: "fa-solid fa-check",
+    loi: "fa-solid fa-info",
     canhBao: "fa-solid fa-triangle-exclamation",
-    error: " fa-solid fa-triangle-exclamation",
+    error: "fa-solid fa-triangle-exclamation",
   };
   var delay = (duration / 1000).toFixed(2);
   var icon = toastIcon[type];
@@ -170,11 +151,6 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
   html.style.animation = `sliderToast ease 0.5s, fadeOut linear 1s ${delay}s forwards`;
   html.innerHTML =
     '<div class="toast toastss">\n' +
-    '          <div class="toast_icon">\n' +
-    '            <i class="' +
-    icon +
-    '"></i>\n' +
-    "          </div>\n" +
     '          <div class="  ">\n' +
     '            <h3 class="toast_body--title">' +
     title +
@@ -182,9 +158,6 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
     '            <p class="toast_body--message">' +
     message +
     "</p>\n" +
-    "          </div>\n" +
-    '          <div class="toast_close">\n' +
-    '            <i class="fa-solid fa-x"></i>\n' +
     "          </div>\n" +
     "        </div>";
 
@@ -207,6 +180,20 @@ function showLoi() {
     type: "loi",
     duration: 3000,
   });
+}
+
+var ishow = false;
+
+function onclickOpen(element) {
+  ishow = !ishow;
+  if (ishow) {
+    document.getElementById("nav_header").style.left = "0";
+    document.getElementById("bar_icon").style.marginLeft = "190px";
+    document.getElementById("search").style.display = "none";
+  } else {
+    document.getElementById("nav_header").style.left = "-240px";
+    document.getElementById("bar_icon").style.marginLeft = "10px";
+  }
 }
 
 // var imagess = document.getElementById("hinhAnh");
