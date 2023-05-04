@@ -14,18 +14,7 @@ function TaoDoiTuongSanPham(hinhAnh, ten, giaGoc, hangDT, moTa, id) {
   } else {
     sanPham.id = taoID();
   }
-  // sanPham.hinhAnh = function chooseFile(fileInput) {
-  //   if (fileInput.files && fileInput.files[0])
-  //     console.log(fileInput.files && fileInput.files[0]);
-  //   {
-  //     var reader = new FileReader();
-  //     console.log(reader);
-  //     reader.onload = function (e) {
-  //       $("#image").attr("src", e.target.result);
-  //     };
-  //     reader.readAsDataURL(fileInput.files[0]);
-  //   }
-  // };
+
   sanPham.tinhGiaBan = function () {
     var giaBan = this.giaGoc * (1 - this.phanTramGiamGia);
     return giaBan;
@@ -97,22 +86,10 @@ function chuyenDanhSachSangHTMlChiTietSanPham(creatProduct) {
   return danhSachSPHTML;
 }
 
-// function truyXuatDoiTuongTheoTen(id) {
-//   var jsdanhsach = localStorage.getItem("creatProduct");
-//   var danhsach = JSON.parse(jsdanhsach);
+// mục tiêu: từ idSanPham lấy lên đối tượng đầy đủ
+// input: idSanPham
+// output: đối tượng sản phẩm
 
-//   for (var i = 0; i < danhsach.length; i++) {
-//     var doiTuongLayra = danhsach[i];
-//     if (doiTuongLayra.id == id) {
-//       return doiTuongLayra;
-//     }
-//   }
-// }
-/*
-mục tiêu: từ idSanPham lấy lên đối tượng đầy đủ
-input: idSanPham
-output: đối tượng sản phẩm
-*/
 function laySanPhamTheoID(idSanPham) {
   var sanPham = new Object();
 
@@ -158,9 +135,3 @@ function luuDanhSachSanPhamVaoXuongLocalStorage(keyLocalStorageSanPham) {
 }
 
 // ---- chuyên đổi danh sách sản phẩm Quản lý sản phẩm------
-function luuSanPhamVaoGioHangSauKhiXoa(xoaKhoiProduct) {
-  // bước 1: chuyển thành chuỗi json
-  var jsXoaKhoiProduct = JSON.stringify(xoaKhoiProduct);
-  // bước 2: lưu vào localStorage
-  localStorage.setItem(keyLocalStorageSanPham, jsXoaKhoiProduc);
-}

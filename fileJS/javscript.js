@@ -28,11 +28,11 @@ function closeCLick() {
   openIcon.style.display = "block";
 }
 
-function TaoDoiTuongDangKy(accouts, passwords, password) {
+function TaoDoiTuongDangKy(account, password, email) {
   var dangKy = new Object();
-  dangKy.accouts = accouts;
-  dangKy.passwords = passwords;
+  dangKy.account = account;
   dangKy.password = password;
+  dangKy.email = email;
 
   dangKy.toJson = function () {
     var json = JSON.stringify(this);
@@ -44,9 +44,9 @@ function TaoDoiTuongDangKy(accouts, passwords, password) {
     var doiTuong = JSON.parse(json);
 
     var doiTuongDayDu = TaoDoiTuongSanPham(
-      doiTuong.accouts,
-      doiTuong.passwords,
-      doiTuong.password
+      doiTuong.account,
+      doiTuong.password,
+      doiTuong.email
     );
     return doiTuongDayDu;
   };
@@ -71,25 +71,33 @@ function validateInput() {
   }
 }
 // form đăng ký-----------------
-// function dangKy() {
-//   validateInput();
-//   const fomElement = document.querySelector(".form");
-//   const error = fomElement.querySelectorAll(".error");
-//   const errors = [];
-//   for (let i = 0; i < error.length; i++) {
-//     errors.push(error[i].innerText);
-//   }
 
-//   const account = document.getElementById("account").value;
-//   console.log(account);
-//   const password = document.getElementById("password").value;
-//   console.log(password);
-//   const email = document.getElementById("email").value;
-//   console.log(email);
+function dangKy() {
+  validateInput();
+  const fomElement = document.querySelector(".form");
+  const error = fomElement.querySelectorAll(".error");
+  const errors = [];
+  for (let i = 0; i < error.length; i++) {
+    errors.push(error[i].innerText);
+  }
 
-//   const danhSachTK = new Object();
-//   console.log();
-// }
+  const account = document.getElementById("account").value;
+  console.log(account);
+  const password = document.getElementById("password").value;
+  console.log(password);
+  const email = document.getElementById("email").value;
+  console.log(email);
+
+  const taoDoiTuogDanhSachTK = TaoDoiTuongDangKy(account, password, email);
+  console.log(taoDoiTuogDanhSachTK);
+  if (account == "" || password == "" || email == "") {
+    showLoi();
+  } else {
+    formDangKy.push(taoDoiTuogDanhSachTK);
+  }
+
+  localStorage.setItem("account", JSON.stringify(formDangKy));
+}
 
 // form đăng nhập-----------------
 function dangNhap() {
@@ -105,7 +113,7 @@ function dangNhap() {
   const matKhau = document.getElementById("password").value;
 
   const kiemTraTk = danhSachTK.some(
-    (value) => value.accouts === tenTaiKhoan && value.password === matKhau
+    (value) => value.account === tenTaiKhoan && value.password === matKhau
   );
 
   if (kiemTraTk) {
@@ -120,12 +128,18 @@ function dangNhap() {
 var danhSachTK = layDanhSachTaiKhoanDuoiLocalStorage();
 
 var isLogin = !!localStorage.getItem("luuBoNho"); //?true:fale
-console.log(isLogin);
 
 function kiemTraTK() {
   if (isLogin) {
     window.location.href = "admin.html";
-    showThanhCongThongBao();
+    showThanhCongThongBao(
+      toast({
+        title: "Thành Công",
+        message: "Chúc mừng bạn đã đăng ký thành công",
+        type: "thanhCong",
+        duration: 3000,
+      })
+    );
   }
 }
 function toast({ title = "", message = "", type = "info", duration = 3000 }) {
@@ -194,3 +208,19 @@ function showLoi() {
     duration: 3000,
   });
 }
+
+// var imagess = document.getElementById("hinhAnh");
+// console.log(imagess);
+// var src = "";
+
+// imagess.addEventListener("change", function () {
+//   console.log(imagess.value);
+//   var reader = new FileReader();
+
+//   reader.addEventListener("load", () => {
+//     src = reader.result;
+
+//     return src;
+//   });
+//   reader.readAsDataURL(this.files[0]);
+// });

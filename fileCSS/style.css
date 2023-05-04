@@ -280,15 +280,15 @@ body {
   padding: 10px;
 }
 #products .items {
-  /* display: flex;
-  justify-content: flex-start; */
+  display: flex;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
 #products .item {
   border-radius: 5px;
   padding: 10px;
-  max-width: 255px;
+  max-width: 200px;
   margin: 10px 17px;
   background-color: var(--bg--white);
   box-shadow: var(--box-shadow);
@@ -306,7 +306,7 @@ body {
 }
 
 #products .item .item_title {
-  font-size: 1.3rem;
+  font-size: 16px;
   margin-bottom: 10px;
   font-weight: 600;
   transition: 0.5s;
@@ -330,10 +330,10 @@ body {
 }
 
 #products .item .btn {
-  padding: 15px 20px;
+  padding: 10px 15px;
   border-radius: 5px;
   border: none;
-  font-size: 1rem;
+  font-size: 15px;
   cursor: pointer;
   background-color: rgb(247, 129, 44);
   color: white;

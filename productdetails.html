@@ -284,7 +284,7 @@
             console.log(sanPham.splice(i, 1));
           }
         }
-        luuSanPhamVaoGioHangSauKhiXoa(sanPham);
+        localStorage.setItem(keyLocalStorageSanPham, JSON.stringify(sanPham));
 
         hienThiDanhSachProduct();
       }

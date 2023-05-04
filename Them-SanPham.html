@@ -18,7 +18,7 @@
     <script src="fileJS/sanPham.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
-  <body>
+  <body">
     <section class="mobile">
       <div id="icon_close" onclick="closeCLick()">
         <i class="fa-solid fa-xmark close" id="close"></i>
@@ -35,9 +35,7 @@
             <li><a href="#hangDT">Hãng điện thoại</a></li>
             <li><a href="#">Hệ thống siêu thị</a></li>
             <li><a href="Them-SanPham.html">Thêm Sản Phẩm</a></li>
-            <li>
-              <a href="productdetails.html">Quản lí Danh Sách Sản phầm</a>
-            </li>
+            
             <li><a href="index.html">Thoát</a></li>
           </ul>
         </div>
@@ -74,10 +72,35 @@
         <label for="moTa">Nội dung mô tả sản phẩm</label>
         <textarea id="moTa" cols="35" rows="10"></textarea>
 
-        <button onclick="onClickTaoSanPham()">Tạo Sản Phẩm</button>
+        <button id="save" onclick="onClickTaoSanPham()">Thêm Sản Phẩm</button>
+        <button id="update" onclick="thayDoiSanPham()" style="display: none">
+          Sửa Sản Phẩm
+        </button>
 
         <!-- <label for="hinhAnh">Hình Ảnh Sản Phâm</label>
         <input type="text" id="hinhAnh"> -->
+      </div>
+      <div id="products">
+        <div class="items" id="items">
+          <div class="item">
+            <div class="item_image">
+              <img
+                src="https://lesang.vn/hinh-anh-le-sang/images/iphone-5-hinh-anh-chinh-thuc-3.jpg"
+                alt=""
+                id="image"
+              />
+            </div>
+            <h2 class="item_title">I Phone 11</h2>
+
+            <div class="item_price">
+              <span class="item_origin">5000000</span>
+            </div>
+            <div class="item_sale-text"></div>
+            <div class="buyMoreCart">
+              <button class="btn primary">Thêm vào giỏ hàng</button>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="footer">
         <div class="footer_container">
@@ -130,6 +153,7 @@
       </div>
     </section>
 
+    <script></script>
     <script>
       var creatProduct = JSON.parse(localStorage.getItem("creatProduct"));
       if (creatProduct == null) {
@@ -166,11 +190,120 @@
 
         creatProduct.push(sanPham);
         var jsonDanhSachSP = JSON.stringify(creatProduct);
-        localStorage.setItem("creatProduct", jsonDanhSachSP);
-        var jsonDanhSachSP = localStorage.getItem("creatProduct");
+        localStorage.setItem(keyLocalStorageSanPham, jsonDanhSachSP);
+        var jsonDanhSachSP = localStorage.getItem(keyLocalStorageSanPham);
 
         alert("Thêm sản phẩm thành công");
+        hienThiDanhSachProduct();
       }
+
+      hienThiDanhSachProduct();
+      function hienThiDanhSachProduct() {
+        var danhSachProduct = layDanhSachSanPhamDuoiLocalStorage();
+
+        var HTML = chuyenDoiDanhSachProductSangHTML(danhSachProduct);
+        var nodeProduct = document.getElementById("items");
+        nodeProduct.innerHTML = HTML;
+      }
+
+      function chuyenDoiDanhSachProductSangHTML(creatProduct) {
+        var htmlTong = "";
+        for (var i = 0; i < creatProduct.length; i++) {
+          htmlTong = htmlTong + chuyenDoiTuongProductSangHTML(creatProduct[i]);
+        }
+        return htmlTong;
+      }
+
+      function chuyenDoiTuongProductSangHTML(sanPham) {
+        var sanpham = laySanPhamTheoID(sanPham.id);
+
+        var html =
+          '<div class="item">' +
+          '          <div class="item_image">' +
+          '            <img src="' +
+          sanpham.hinhAnh +
+          '" alt="" id="image" />' +
+          "          </div>" +
+          '          <h2 class="item_title">' +
+          sanpham.ten +
+          "</h2>" +
+          '          <div class="item_price">' +
+          '            <span class="item_origin"> ' +
+          sanPham.giaGoc +
+          "Đ</span>" +
+          "          </div>" +
+          '          <div class="item_sale-text">' +
+          sanPham.moTa +
+          "</div>" +
+          '<div id="index" type="hidden" value"' +
+          sanPham.id +
+          '"></div>' +
+          '          <div class="btnDelete">' +
+          '            <i class="fa-solid fa-pen-to-square " onclick="editSanPham(' +
+          sanPham.id +
+          ')"></i>' +
+          '            <i class="fa-solid fa-trash" onclick="xoaItemTrongProduct(' +
+          sanPham.id +
+          ')"></i>' +
+          "          </div>" +
+          "        </div>";
+
+        return html;
+      }
+
+      function xoaItemTrongProduct(layID) {
+        var sanPham = layDanhSachSanPhamDuoiLocalStorage();
+        console.log(sanPham);
+        //
+        for (var i = 0; i < sanPham.length; i++) {
+          if (sanPham[i].id == layID) {
+            sanPham.splice(i, 1);
+          }
+        }
+        localStorage.setItem(keyLocalStorageSanPham, JSON.stringify(sanPham));
+
+        hienThiDanhSachProduct();
+      }
+
+      function editSanPham(id) {
+        var danhSachSanPham = layDanhSachSanPhamDuoiLocalStorage();
+        console.log(danhSachSanPham);
+        for (var i = 0; i < danhSachSanPham.length; i++) {
+          if (danhSachSanPham[i].id == id) {
+            document.getElementById("hinhAnh").value =
+              danhSachSanPham[i].hinhAnh;
+            document.getElementById("ten").value = danhSachSanPham[i].ten;
+            document.getElementById("giaGoc").value = danhSachSanPham[i].giaGoc;
+            document.getElementById("hangDT").value = danhSachSanPham[i].hangDT;
+            document.getElementById("moTa").value = danhSachSanPham[i].moTa;
+            document.getElementById("index").value = id;
+            document.getElementById("save").style.display = "none";
+            document.getElementById("update").style.display = "block";
+          }
+        }
+      }
+
+      // function thayDoiSanPham() {
+      //   var sanPham = layDanhSachSanPhamDuoiLocalStorage();
+      //   var index = document.getElementById("index").value;
+      //   for (var i = 0; i < sanPham.length; i++) {
+      //     if (sanPham[i].id == index) {
+      //       var sanPham = sanPham[i];
+      //       console.log(sanPham);
+      //     }
+      //   }
+      //   sanPham = {
+      //     hinhAnh: document.getElementById("hinhAnh").value,
+      //     ten: document.getElementById("ten").value,
+      //     giaGoc: document.getElementById("giaGoc").value,
+      //     hangDT: document.getElementById("hangDT").value,
+      //     moTa: document.getElementById("moTa").value,
+      //   };
+      //   console.log(sanPham);
+      //   luuDanhSachSanPhamVaoXuongLocalStorage(sanPham);
+
+      //   hienThiDanhSachProduct();
+      // }
     </script>
     <script src="fileJS/javscript.js"></script>
   </body>

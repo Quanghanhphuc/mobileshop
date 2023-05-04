@@ -60,19 +60,6 @@
               <i class="fa-solid fa-magnifying-glass"></i>
             </div>
           </div>
-          <!-- <div class="header__nav--oder">
-            <a class="check--oder" href="#">
-              <span class="icon">
-                <i class="fa fa-car"></i>
-              </span>
-              <span class="text">Kiểm tra đơn hàng</span>
-            </a>
-          </div> -->
-          <!-- <div class="header__nav--cart">
-            <div class="cart--logo">
-              <a href="gioHang.html"><i class="fa fa-cart-shopping"></i></a>
-            </div>
-          </div> -->
         </div>
       </div>
       <div class="header">
@@ -283,10 +270,11 @@
     <script>
       // slider
 
-      var jsonDanhSachSP = localStorage.getItem("creatProduct");
-      var creatProduct = JSON.parse(jsonDanhSachSP);
+      var creatProduct = layDanhSachSanPhamDuoiLocalStorage();
       console.log("danh sách sản phẩm là:");
+      console.log(creatProduct);
       // chuyển danh sách đối tượng sang HTML
+
       var HTML = chuyenDanhSachSPSangHTML(creatProduct);
 
       // gán HTML vào product
