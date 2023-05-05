@@ -298,7 +298,7 @@ body {
 }
 #products .items {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -927,6 +927,9 @@ textarea#moTa {
   .technology {
     display: block;
   }
+  .nav {
+    margin-top: 20px;
+  }
   .header__name--img {
     width: 95%;
   }
@@ -967,7 +970,7 @@ textarea#moTa {
     display: block;
     position: fixed;
     margin: 2px;
-    width: 190px;
+    width: 150px;
     height: 100%;
     top: 0;
     left: -190px;
@@ -1181,12 +1184,7 @@ textarea#moTa {
   .information_address .phuong_soNha input {
     width: 100%;
   }
-  .nav__header {
-    width: 45%;
-  }
-  .nav__header ul li {
-    margin: unset;
-  }
+
   .nav__header ul li a {
     font-size: 12px;
   }
@@ -1195,9 +1193,7 @@ textarea#moTa {
   .technology {
     display: block;
   }
-  .nav__header ul li {
-    margin: unset;
-  }
+
   .header__name--img {
     width: 90%;
   }

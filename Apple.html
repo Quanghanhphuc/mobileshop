@@ -5,20 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Apple</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/e7b2442fa6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="fileCSS/otherCSS/sigup.css" />
     <script src="fileJS/sanPham.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
-    <form action="">
-      <img src="" alt="" id="image" width="200" , height="200" />
-      <input
-        type="file"
-        name=""
-        id="imageFile"
-        onchange="chooseFile(this)"
-        accept="image/gif, image/jpeg, image/png"
-      />
-    </form>
-    <script></script>
+    <div class="buttons">
+      <button onclick="showToast(succsesMsg)">đúng</button>
+      <button onclick="showToast(errorMsg)">sai</button>
+      <button onclick="showToast(ifoMsg)">cảnh báo</button>
+    </div>
+    <div id="toastBox"></div>
+    <script>
+      var toastBox = document.getElementById("toastBox");
+      var succsesMsg = '<i class="fa-solid fa-circle-check"></i> Thành Công';
+      var errorMsg =
+        '<i class="fa-solid fa-circle-xmark"></i> Xin lỗi xin kiểm tra lại';
+      var ifoMsg =
+        '<i class="fa-solid fa-circle-exclamation"></i> Cảnh báo chưa nhập thông tin';
+      function showToast(msg) {
+        var toast = document.createElement("div");
+        toast.classList.add("toast");
+        toast.innerHTML = msg;
+        toastBox.appendChild(toast);
+
+        if (msg.includes("tra")) {
+          toast.classList.add("tra");
+        }
+        if (msg.includes("Cảnh")) {
+          toast.classList.add("Cảnh");
+        }
+
+        setTimeout(() => {
+          toast.remove();
+        }, 6000);
+      }
+    </script>
   </body>
 </html>

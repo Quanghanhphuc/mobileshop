@@ -71,10 +71,10 @@ function dangKy() {
   const taoDoiTuogDanhSachTK = TaoDoiTuongDangKy(account, password, email);
   console.log(taoDoiTuogDanhSachTK);
   if (account == "" || password == "" || email == "") {
-    showLoi();
+    showToast(errorMsg);
   } else {
     formDangKy.push(taoDoiTuogDanhSachTK);
-    showThanhCongThongBao();
+    showToast(succsesMsg);
   }
 
   localStorage.setItem("account", JSON.stringify(formDangKy));
@@ -100,9 +100,9 @@ function dangNhap() {
   if (kiemTraTk) {
     localStorage.setItem("luuBoNho", tenTaiKhoan);
     isLogin = true;
-    kiemTraTK();
+    window.location.href = "admin.html";
   } else {
-    showLoi();
+    showToast(errorMsg);
   }
 }
 
@@ -113,73 +113,7 @@ var isLogin = !!localStorage.getItem("luuBoNho"); //?true:fale
 function kiemTraTK() {
   if (isLogin) {
     window.location.href = "admin.html";
-    showThanhCongThongBao(
-      toast({
-        title: "Thành Công",
-        message: "Chúc mừng bạn đã đăng ký thành công",
-        type: "thanhCong",
-        duration: 3000,
-      })
-    );
   }
-}
-function toast({ title = "", message = "", type = "info", duration = 3000 }) {
-  var main = document.getElementById("toasts");
-  if (main) {
-    var html = document.createElement("div");
-
-    var autoRemove = setTimeout(function () {
-      main.removeChild(html);
-    }, duration + 1000);
-  }
-
-  html.onclick = function (e) {
-    if (e.target.closest(".toast_close")) {
-      main.removeChild(html);
-      clearTimeout(autoRemove);
-    }
-  };
-  var toastIcon = {
-    thanhCong: "fa-solid fa-check",
-    loi: "fa-solid fa-info",
-    canhBao: "fa-solid fa-triangle-exclamation",
-    error: "fa-solid fa-triangle-exclamation",
-  };
-  var delay = (duration / 1000).toFixed(2);
-  var icon = toastIcon[type];
-  html.classList.add("toastss", `toast${type}`);
-  html.style.animation = `sliderToast ease 0.5s, fadeOut linear 1s ${delay}s forwards`;
-  html.innerHTML =
-    '<div class="toast toastss">\n' +
-    '          <div class="  ">\n' +
-    '            <h3 class="toast_body--title">' +
-    title +
-    "</h3>\n" +
-    '            <p class="toast_body--message">' +
-    message +
-    "</p>\n" +
-    "          </div>\n" +
-    "        </div>";
-
-  main.appendChild(html);
-}
-
-function showThanhCongThongBao() {
-  toast({
-    title: "Thành Công",
-    message: "Chúc mừng bạn đã đăng ký thành công",
-    type: "thanhCong",
-    duration: 3000,
-  });
-}
-
-function showLoi() {
-  toast({
-    title: "Không thành công",
-    message: "Thông tin bạn nhập không chính xác mời nhập lại",
-    type: "loi",
-    duration: 3000,
-  });
 }
 
 var ishow = false;
@@ -188,11 +122,12 @@ function onclickOpen(element) {
   ishow = !ishow;
   if (ishow) {
     document.getElementById("nav_header").style.left = "0";
-    document.getElementById("bar_icon").style.marginLeft = "190px";
+    document.getElementById("bar_icon").style.marginLeft = "150px";
     document.getElementById("search").style.display = "none";
   } else {
     document.getElementById("nav_header").style.left = "-240px";
     document.getElementById("bar_icon").style.marginLeft = "10px";
+    document.getElementById("search").style.display = "block";
   }
 }
 
@@ -211,3 +146,25 @@ function onclickOpen(element) {
 //   });
 //   reader.readAsDataURL(this.files[0]);
 // });
+var toastBox = document.getElementById("toastBox");
+var succsesMsg = '<i class="fa-solid fa-circle-check"></i> Thành Công';
+var errorMsg = '<i class="fa-solid fa-circle-xmark"></i> Xin kiểm tra lại';
+var ifoMsg =
+  '<i class="fa-solid fa-circle-exclamation"></i> Cảnh báo chưa nhập thông tin';
+function showToast(msg) {
+  var toast = document.createElement("div");
+  toast.classList.add("toast");
+  toast.innerHTML = msg;
+  toastBox.appendChild(toast);
+
+  if (msg.includes("tra")) {
+    toast.classList.add("tra");
+  }
+  if (msg.includes("Cảnh")) {
+    toast.classList.add("Cảnh");
+  }
+
+  setTimeout(() => {
+    toast.remove();
+  }, 6000000);
+}
