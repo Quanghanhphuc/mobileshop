@@ -32,7 +32,12 @@
           <li><a href="#">Giới thiệu</a></li>
           <li><a href="#hangDT">Hãng điện thoại</a></li>
           <li><a href="#">Hệ thống siêu thị</a></li>
-          <li><a href="gioHang.html">Giỏ Hàng</a></li>
+          <li>
+            <div class="total_display">
+              <a href="gioHang.html">Giỏ Hàng</a>
+              <div class="total_soLuong">0</div>
+            </div>
+          </li>
           <li><a href="FormLogin.html">Đăng nhập</a></li>
         </ul>
       </div>
@@ -81,9 +86,9 @@
           <div class="information">
             <h1>Thông Tin Khách Hàng</h1>
             <div class="information_gender">
-              <input type="radio" />
+              <input type="radio" name="maxx" />
               <label for="Anh">Anh</label>
-              <input type="radio" class="raio" />
+              <input type="radio" class="raio" name="maxx" />
               <label for="Chi">Chị</label>
             </div>
             <div class="information_name">
@@ -104,7 +109,7 @@
               </div>
             </div>
             <h1 class="sum_money">Tổng Tiền</h1>
-            <p class="total_price"><span>Đ</span></p>
+            <p class="total_price"></p>
             <div class="btn_datHang">
               <button>Đặt Hàng</button>
             </div>
@@ -190,7 +195,6 @@
         console.log(itemGioHang.idSanPham);
 
         var giaHienTai = itemGioHang.soLuong * sanPham.giaGoc;
-        var num = parseInt(giaHienTai);
 
         var html =
           ' <div class="items">\n' +
@@ -212,7 +216,7 @@
           '              <div class="itemTongTien">\n' +
           '                <div class="item_price">' +
           giaHienTai +
-          "Đ</div>\n" +
+          " Đ</div>\n" +
           "              </div>\n" +
           '              <div class="delete">\n' +
           '                <i class="fa-solid fa-trash" onclick="xoaItemGioHang(' +
@@ -235,25 +239,24 @@
             }
           }
         }
+        // soLuongGioHang();
         luuGioHangVaoLocalStorage(sanPham);
+
         hienThiDanhSachItemGioHang();
       }
 
       function tongDonHang() {
         var gioHang = document.getElementById("main");
-
         var tr = gioHang.children;
-
         var tongGia = 0;
         for (var i = 0; i < tr.length; i++) {
           var td = tr[i].querySelector(".item_price");
-
           var tongTien = parseInt(td.innerHTML);
-
+          console.log(tongTien);
           tongGia += tongTien;
         }
         document.querySelector(".total_price").innerHTML =
-          tongGia.toLocaleString();
+          tongGia.toLocaleString() + " Đ";
       }
     </script>
     <script src="fileJS/javscript.js"></script>

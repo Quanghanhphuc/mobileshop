@@ -43,6 +43,7 @@ body {
   display: flex;
   justify-content: space-around;
   background: var(--bg-black-100);
+  align-items: center;
 }
 .nav__header ul li {
   list-style: none;
@@ -61,6 +62,14 @@ body {
   padding: 15px 15px;
   justify-content: space-between;
   align-items: center;
+}
+.total_display {
+  display: flex;
+  align-items: center;
+}
+.total_display .total_soLuong {
+  font-size: 11px;
+  margin-left: 3px;
 }
 .nav__banner .header__logo h3 {
   font-size: 2rem;
@@ -838,10 +847,7 @@ textarea#moTa {
   .main_oder .itemName span {
     font-size: 15px;
   }
-  .information_gender {
-    display: flex;
-    justify-content: flex-start;
-  }
+
   .them-moi-san-pham label {
     font-size: 12px;
   }

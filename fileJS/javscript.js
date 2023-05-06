@@ -4,6 +4,7 @@ function layDanhSachTaiKhoanDuoiLocalStorage() {
   var jsDanhSachTaiKhoan = localStorage.getItem(
     keyDanhSachTaiKhoanLocalStorage
   );
+
   danhSachTaiKhoan = JSON.parse(jsDanhSachTaiKhoan);
   return danhSachTaiKhoan;
 }
@@ -37,6 +38,19 @@ if (formDangKy == null) {
   formDangKy = new Array();
 }
 
+function clearInput() {
+  document.getElementById("account").value = "";
+  document.getElementById("password").value = "";
+  document.getElementById("email").value = "";
+}
+
+function clearInputAdd() {
+  document.getElementById("hinhAnh").value = "";
+  document.getElementById("ten").value = "";
+  document.getElementById("giaGoc").value = "";
+  document.getElementById("hangDT").value = "";
+  document.getElementById("moTa").value = "";
+}
 function validateInput() {
   const fomElement = document.querySelector(".form");
   const inPutElemen = fomElement.querySelectorAll(".input_check");
@@ -47,6 +61,19 @@ function validateInput() {
       ).innerText = `không được để trống ${inPutElemen[i].id}`;
     } else {
       inPutElemen[i].parentElement.querySelector(".error").innerText = "";
+    }
+  }
+}
+var danhSachTK = layDanhSachTaiKhoanDuoiLocalStorage();
+function checkInputAccount() {
+  const danhSachTaiKhoan = localStorage.getItem(keyDanhSachTaiKhoanLocalStorage)
+    ? JSON.parse(localStorage.getItem(keyDanhSachTaiKhoanLocalStorage))
+    : [];
+  var accounts = document.getElementById("account").value;
+  for (var i = 0; i < danhSachTaiKhoan.length; i++) {
+    if (danhSachTaiKhoan[i].account == accounts) {
+      console.log(danhSachTaiKhoan[i].account);
+      return true;
     }
   }
 }
@@ -62,19 +89,17 @@ function dangKy() {
   }
 
   const account = document.getElementById("account").value;
-  console.log(account);
   const password = document.getElementById("password").value;
-  console.log(password);
   const email = document.getElementById("email").value;
-  console.log(email);
 
   const taoDoiTuogDanhSachTK = TaoDoiTuongDangKy(account, password, email);
-  console.log(taoDoiTuogDanhSachTK);
-  if (account == "" || password == "" || email == "") {
+
+  if (checkInputAccount() || account == "" || password == "" || email == "") {
     showToast(errorMsg);
   } else {
     formDangKy.push(taoDoiTuogDanhSachTK);
     showToast(succsesMsg);
+    clearInput();
   }
 
   localStorage.setItem("account", JSON.stringify(formDangKy));
@@ -105,8 +130,6 @@ function dangNhap() {
     showToast(errorMsg);
   }
 }
-
-var danhSachTK = layDanhSachTaiKhoanDuoiLocalStorage();
 
 var isLogin = !!localStorage.getItem("luuBoNho"); //?true:fale
 

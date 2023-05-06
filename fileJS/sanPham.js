@@ -135,3 +135,17 @@ function luuDanhSachSanPhamVaoXuongLocalStorage(keyLocalStorageSanPham) {
 }
 
 // ---- chuyên đổi danh sách sản phẩm Quản lý sản phẩm------
+var gioHang = document.getElementById("main");
+console.log(gioHang);
+function soLuongGioHang() {
+  var tr = gioHang.children;
+  console.log(tr);
+  var tongGia = 0;
+  for (var i = 0; i < tr.length; i++) {
+    var td = tr[i].querySelector(".soLuong").value;
+    console.log(td);
+    tongGia += parseInt(td);
+    console.log(tongGia);
+  }
+  document.querySelector(".total_soLuong").innerHTML = tongGia;
+}

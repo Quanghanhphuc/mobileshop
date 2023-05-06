@@ -166,27 +166,25 @@
       if (creatProduct == null) {
         creatProduct = new Array();
       }
-      // console.log(creatProduct);
+      
 
-      function onClickTaoSanPham() {
-        // console.log("goi ham");
-        showToast(succsesMsg)
+      function onClickTaoSanPham() { 
         nodeHinhAnh = document.getElementById("hinhAnh");
-        var hinhAnh = nodeHinhAnh.value;
+        const hinhAnh = nodeHinhAnh.value;
 
         nodeTen = document.getElementById("ten");
-        var ten = nodeTen.value;
+        const ten = nodeTen.value;
 
         nodeGiaGoc = document.getElementById("giaGoc");
-        var giaGoc = parseInt(nodeGiaGoc.value);
+        const giaGoc = parseInt(nodeGiaGoc.value);
 
         nodeHangDT = document.getElementById("hangDT");
-        var hangDT = nodeHangDT.value;
+        const hangDT = nodeHangDT.value;
 
         nodemoTa = document.getElementById("moTa");
-        var moTa = nodemoTa.value;
+        const moTa = nodemoTa.value;
 
-        var sanPham = TaoDoiTuongSanPham(
+        const sanPham = TaoDoiTuongSanPham(
           hinhAnh,
           ten,
           giaGoc,
@@ -194,22 +192,25 @@
           moTa,
           null
         );
-
-        creatProduct.push(sanPham);
+          if(hinhAnh==""||ten==""||giaGoc==""){
+            showToast(errorMsg);
+          }else{
+            creatProduct.push(sanPham);
+            clearInputAdd()
+            showToast(succsesMsg)
+          } 
         var jsonDanhSachSP = JSON.stringify(creatProduct);
         localStorage.setItem(keyLocalStorageSanPham, jsonDanhSachSP);
         var jsonDanhSachSP = localStorage.getItem(keyLocalStorageSanPham);
-
-        showToast(succsesMsg)
+        
         hienThiDanhSachProduct();
       }
 
       hienThiDanhSachProduct();
       function hienThiDanhSachProduct() {
-        var danhSachProduct = layDanhSachSanPhamDuoiLocalStorage();
-
-        var HTML = chuyenDoiDanhSachProductSangHTML(danhSachProduct);
-        var nodeProduct = document.getElementById("items");
+        const danhSachProduct = layDanhSachSanPhamDuoiLocalStorage();
+        const HTML = chuyenDoiDanhSachProductSangHTML(danhSachProduct);
+        const nodeProduct = document.getElementById("items");
         nodeProduct.innerHTML = HTML;
       }
 
@@ -223,16 +224,15 @@
 
       function chuyenDoiTuongProductSangHTML(sanPham) {
         var sanpham = laySanPhamTheoID(sanPham.id);
-
         var html =
           '<div class="item">' +
           '          <div class="item_image">' +
           '            <img src="' +
-          sanpham.hinhAnh +
+          sanPham.hinhAnh +
           '" alt="" id="image" />' +
           "          </div>" +
           '          <h2 class="item_title">' +
-          sanpham.ten +
+          sanPham.ten +
           "</h2>" +
           '          <div class="item_price">' +
           '            <span class="item_origin"> ' +
@@ -259,9 +259,7 @@
       }
 
       function xoaItemTrongProduct(layID) {
-        var sanPham = layDanhSachSanPhamDuoiLocalStorage();
-        console.log(sanPham);
-        //
+        const sanPham = layDanhSachSanPhamDuoiLocalStorage();
         for (var i = 0; i < sanPham.length; i++) {
           if (sanPham[i].id == layID) {
            if(confirm("bạn thật sự muốn xóa sản phẩm này")){
@@ -270,12 +268,11 @@
           }
         }
         localStorage.setItem(keyLocalStorageSanPham, JSON.stringify(sanPham));
-
-        hienThiDanhSachProduct();
+        hienThiDanhSachProduct(); 
       }
 
       function editSanPham(id) {
-        var danhSachSanPham = layDanhSachSanPhamDuoiLocalStorage();
+        const danhSachSanPham = layDanhSachSanPhamDuoiLocalStorage();
         console.log(danhSachSanPham);
         for (var i = 0; i < danhSachSanPham.length; i++) {
           if (danhSachSanPham[i].id == id) {
@@ -292,27 +289,28 @@
         }
       }
 
-      // function thayDoiSanPham() {
-      //   var sanPham = layDanhSachSanPhamDuoiLocalStorage();
-      //   var index = document.getElementById("index").value;
-      //   for (var i = 0; i < sanPham.length; i++) {
-      //     if (sanPham[i].id == index) {
-      //       var sanPham = sanPham[i];
-      //       console.log(sanPham);
-      //     }
-      //   }
-      //   sanPham = {
-      //     hinhAnh: document.getElementById("hinhAnh").value,
-      //     ten: document.getElementById("ten").value,
-      //     giaGoc: document.getElementById("giaGoc").value,
-      //     hangDT: document.getElementById("hangDT").value,
-      //     moTa: document.getElementById("moTa").value,
-      //   };
-      //   console.log(sanPham);
-      //   luuDanhSachSanPhamVaoXuongLocalStorage(sanPham);
+      function thayDoiSanPham(sanPham) {
+        var sanPham = layDanhSachSanPhamDuoiLocalStorage();
+        var index = document.getElementById("index").value;
+        // for (var i = 0; i < sanPham.length; i++) {
+        //   if (sanPham[i].id == index) {
+        //     var sanpham = sanPham[i];
+        //     console.log(sanpham);
+        //   }
+        // }
+        var sanpham = laySanPhamTheoID(sanPham.id);
+        sanpham[index] = {
+          hinhAnh: document.getElementById("hinhAnh").value,
+          ten: document.getElementById("ten").value,
+          giaGoc: document.getElementById("giaGoc").value,
+          hangDT: document.getElementById("hangDT").value,
+          moTa: document.getElementById("moTa").value,
+        };
+        console.log(sanpham[index]);
+        luuDanhSachSanPhamVaoXuongLocalStorage(sanPham);
 
-      //   hienThiDanhSachProduct();
-      // }
+        hienThiDanhSachProduct();
+      }
     </script>
     <script src="fileJS/javscript.js"></script>
   </body>
