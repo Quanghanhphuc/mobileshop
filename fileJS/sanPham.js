@@ -52,6 +52,7 @@ function chuyenDanhSachSPSangHTML(creatProduct) {
 }
 
 function chuyenDoiTuongSangHTML(sanPham) {
+  var gia = sanPham.giaGoc;
   var html = "";
   html += '<div class="item">';
 
@@ -60,7 +61,7 @@ function chuyenDoiTuongSangHTML(sanPham) {
   html += "  </div>";
   html += '  <h2 class="item_title">' + sanPham.ten + "</h2>";
   html += ' <div class="item_price">';
-  html += ' <span class="item_origin">' + sanPham.giaGoc + "Đ</span>";
+  html += ' <span class="item_origin">' + gia.toLocaleString() + "Đ</span>";
   html += "  </div>";
   html += '<div class="item_sale-text">' + sanPham.moTa + "</div>";
   html += '<div class="buyMoreCart">';
@@ -135,17 +136,3 @@ function luuDanhSachSanPhamVaoXuongLocalStorage(keyLocalStorageSanPham) {
 }
 
 // ---- chuyên đổi danh sách sản phẩm Quản lý sản phẩm------
-var gioHang = document.getElementById("main");
-console.log(gioHang);
-function soLuongGioHang() {
-  var tr = gioHang.children;
-  console.log(tr);
-  var tongGia = 0;
-  for (var i = 0; i < tr.length; i++) {
-    var td = tr[i].querySelector(".soLuong").value;
-    console.log(td);
-    tongGia += parseInt(td);
-    console.log(tongGia);
-  }
-  document.querySelector(".total_soLuong").innerHTML = tongGia;
-}

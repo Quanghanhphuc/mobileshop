@@ -22,7 +22,7 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
-  <body>
+  <body onload="tongSl()">
     <div id="toasts"></div>
     <section class="mobile">
       <div id="toastBox"></div>
@@ -40,7 +40,7 @@
           <li>
             <div class="total_display">
               <a href="gioHang.html">Giỏ Hàng</a>
-              <div class="total_soLuong">0</div>
+              <div class="total_soLuong">"(0)"</div>
             </div>
           </li>
 
@@ -283,7 +283,7 @@
 
       var creatProduct = layDanhSachSanPhamDuoiLocalStorage();
       console.log("danh sách sản phẩm là:");
-      console.log(creatProduct);
+
       // chuyển danh sách đối tượng sang HTML
 
       var HTML = chuyenDanhSachSPSangHTML(creatProduct);
@@ -313,19 +313,13 @@
           var itemGioHang = taoDoiTuongItemGioHang(idSanPham, 1);
           danhSachItemGioHang.push(itemGioHang);
         }
-        tongSl();
+
         // lưu trữ xuống localstorage
         // soLuongGioHang();
         luuGioHangVaoLocalStorage(danhSachItemGioHang);
+        tongSl();
       }
-      function tongSl() {
-        var danhSachItemGioHang = layGioHangTuLocalStorage();
-        let tong = 0;
-        for (let i = 0; i < danhSachItemGioHang.length; i++) {
-          const element = danhSachItemGioHang[i].soLuong;
-          console.log(element);
-        }
-      }
+
       var userr = new Object();
       function searchDanhSachSanPham() {
         var danhSachSanPham = layDanhSachSanPhamDuoiLocalStorage();

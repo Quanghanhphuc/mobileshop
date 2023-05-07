@@ -64,7 +64,9 @@ function validateInput() {
     }
   }
 }
-var danhSachTK = layDanhSachTaiKhoanDuoiLocalStorage();
+var danhSachTK = localStorage.getItem(keyDanhSachTaiKhoanLocalStorage)
+  ? JSON.parse(localStorage.getItem(keyDanhSachTaiKhoanLocalStorage))
+  : [];
 function checkInputAccount() {
   const danhSachTaiKhoan = localStorage.getItem(keyDanhSachTaiKhoanLocalStorage)
     ? JSON.parse(localStorage.getItem(keyDanhSachTaiKhoanLocalStorage))

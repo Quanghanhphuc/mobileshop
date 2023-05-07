@@ -26,6 +26,15 @@ function themSanPhamVaoGioHang(idSanPham, gioHang) {
  input: trống
  output: danh sách toàn bộ item được đưa vào giỏ hàng
  **/
+function tongSl() {
+  var danhSachItemGioHang = layGioHangTuLocalStorage();
+  let tong = 0;
+  for (let i = 0; i < danhSachItemGioHang.length; i++) {
+    const element = danhSachItemGioHang[i].soLuong;
+    tong += element;
+  }
+  document.querySelector(".total_soLuong").innerHTML = `(${tong})`;
+}
 
 function luuGioHangVaoLocalStorage(gioHang) {
   // bước 1: chuyển thành chuỗi json
