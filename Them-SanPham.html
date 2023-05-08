@@ -70,7 +70,7 @@
 
         <label for="moTa">Nội dung mô tả sản phẩm</label>
         <textarea id="moTa" cols="35" rows="10"></textarea>
-
+<input type="hidden" id="index">
         <button id="save" onclick="onClickTaoSanPham()">Thêm Sản Phẩm</button>
         <button id="update" onclick="thayDoiSanPham()" style="display: none">
           Sửa Sản Phẩm
@@ -224,6 +224,7 @@
 
       function chuyenDoiTuongProductSangHTML(sanPham) {
         var sanpham = laySanPhamTheoID(sanPham.id);
+        var gia=sanPham.giaGoc;
         var html =
           '<div class="item">' +
           '          <div class="item_image">' +
@@ -236,14 +237,14 @@
           "</h2>" +
           '          <div class="item_price">' +
           '            <span class="item_origin"> ' +
-          sanPham.giaGoc +
+          gia.toLocaleString() +
           "Đ</span>" +
           "          </div>" +
           '          <div class="item_sale-text">' +
           sanPham.moTa +
           "</div>" +
           '<div id="index" type="hidden" value"' +
-          sanPham.id +
+          sanPham.index +
           '"></div>' +
           '          <div class="btnDelete">' +
           '            <i class="fa-solid fa-pen-to-square " onclick="editSanPham(' +
@@ -272,8 +273,7 @@
       }
 
       function editSanPham(id) {
-        const danhSachSanPham = layDanhSachSanPhamDuoiLocalStorage();
-        console.log(danhSachSanPham);
+        const danhSachSanPham = localStorage.getItem(keyLocalStorageSanPham)?JSON.parse(localStorage.getItem(keyLocalStorageSanPham)):[]
         for (var i = 0; i < danhSachSanPham.length; i++) {
           if (danhSachSanPham[i].id == id) {
             document.getElementById("hinhAnh").value =
@@ -289,26 +289,22 @@
         }
       }
 
-      function thayDoiSanPham(sanPham) {
-        var sanPham = layDanhSachSanPhamDuoiLocalStorage();
-        var index = document.getElementById("index").value;
-        // for (var i = 0; i < sanPham.length; i++) {
-        //   if (sanPham[i].id == index) {
-        //     var sanpham = sanPham[i];
-        //     console.log(sanpham);
-        //   }
-        // }
-        var sanpham = laySanPhamTheoID(sanPham.id);
-        sanpham[index] = {
-          hinhAnh: document.getElementById("hinhAnh").value,
-          ten: document.getElementById("ten").value,
-          giaGoc: document.getElementById("giaGoc").value,
-          hangDT: document.getElementById("hangDT").value,
-          moTa: document.getElementById("moTa").value,
-        };
-        console.log(sanpham[index]);
-        luuDanhSachSanPhamVaoXuongLocalStorage(sanPham);
-
+      function thayDoiSanPham() {
+        var danhSachSanPham = localStorage.getItem(keyLocalStorageSanPham)?JSON.parse(localStorage.getItem(keyLocalStorageSanPham)):[]
+        var index=document.getElementById("index").value
+        document.getElementById("save").style.display = "block";
+        document.getElementById("update").style.display = "none";
+        for (sp of danhSachSanPham) {
+          if (sp.id == index) {
+            sp.hinhAnh = document.getElementById("hinhAnh").value
+            sp.ten = document.getElementById("ten").value
+            sp.giaGoc = document.getElementById("giaGoc").value
+            sp.hangDT = document.getElementById("hangDT").value
+            sp.moTa = document.getElementById("moTa").value
+          }
+        }
+        localStorage.setItem(keyLocalStorageSanPham,JSON.stringify(danhSachSanPham))
+        clearInputAdd();
         hienThiDanhSachProduct();
       }
     </script>

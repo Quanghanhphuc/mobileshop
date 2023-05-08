@@ -279,15 +279,8 @@
       }, 5000);
     </script>
     <script>
-      // slider
-
       var creatProduct = layDanhSachSanPhamDuoiLocalStorage();
-      console.log("danh sách sản phẩm là:");
-
-      // chuyển danh sách đối tượng sang HTML
-
       var HTML = chuyenDanhSachSPSangHTML(creatProduct);
-
       // gán HTML vào product
       var nodeProducts = document.getElementById("products");
       nodeProducts.innerHTML = HTML;
@@ -296,7 +289,6 @@
         showToast(succsesMsg);
         //bước 2: lấy danh sách giỏ hàng trong localstrorage ra sử dụng hàm tái sử dụng bên giohang.js
         var danhSachItemGioHang = layGioHangTuLocalStorage();
-        console.log(danhSachItemGioHang);
         // bước 3: cho chạy vòng lập danh sách item vừa lấy từ localstorage và kiểm tra:
         var coTonTaiItemTrongGioHang = false;
         for (var i = 0; i < danhSachItemGioHang.length; i++) {
@@ -323,19 +315,14 @@
       var userr = new Object();
       function searchDanhSachSanPham() {
         var danhSachSanPham = layDanhSachSanPhamDuoiLocalStorage();
-        console.log(danhSachSanPham);
         var nodeSearch = document.querySelector(".search__input");
         var search = nodeSearch.value;
-        console.log(search);
         var usserSearch = danhSachSanPham.filter((danhSachSanPham) => {
           return danhSachSanPham.ten
             .toUpperCase()
             .includes(search.toUpperCase());
         });
-        console.log(usserSearch);
-
         var HTML = chuyenDanhSachSPSangHTML(usserSearch);
-
         var nodeProducts = document.getElementById("products");
         nodeProducts.innerHTML = HTML;
       }
