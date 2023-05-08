@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="fileCSS/otherCSS/sigup.css">
     <script src="fileJS/hotro.js"></script>
     <script src="fileJS/sanPham.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   
   </head>
   <body">
   <div id="toastBox"></div>
@@ -266,6 +266,8 @@
            if(confirm("bạn thật sự muốn xóa sản phẩm này")){
             sanPham.splice(i, 1);
            } 
+          }else{
+            showToast(errorMsg);
           }
         }
         localStorage.setItem(keyLocalStorageSanPham, JSON.stringify(sanPham));
@@ -301,6 +303,7 @@
             sp.giaGoc = document.getElementById("giaGoc").value
             sp.hangDT = document.getElementById("hangDT").value
             sp.moTa = document.getElementById("moTa").value
+            showToast(succsesMsg)
           }
         }
         localStorage.setItem(keyLocalStorageSanPham,JSON.stringify(danhSachSanPham))
